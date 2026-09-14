@@ -1,0 +1,276 @@
+2026-09-14 13:21:39 | INFO     | __main__               | ########################################################################
+2026-09-14 13:21:39 | INFO     | __main__               | Capstone Part 3, Task 1 — supervised learning
+2026-09-14 13:21:39 | INFO     | __main__               | ########################################################################
+2026-09-14 13:21:40 | INFO     | common                 | MLflow tracking URI: sqlite:////home/claude/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
+2026-09-14 13:21:40 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
+2026-09-14 13:21:40 | INFO     | common                 | Proxy accident-risk label created — 5,682 high-risk hour(s) of 40,575 (14.00% positive class)
+2026-09-14 13:21:40 | DEBUG    | common                 | Label components — high/severe congestion: 20,287 hours (50.0%), risky weather: 12,088 hours (29.8%)
+2026-09-14 13:21:40 | INFO     | common                 | Feature set assembled: 44 features
+2026-09-14 13:21:40 | DEBUG    | common                 | Features: ['hour', 'day_of_week', 'is_weekend', 'month', 'day_of_year', 'is_morning_rush', 'is_evening_rush', 'is_rush_hour', 'hour_sin', 'hour_cos', 'day_of_week_sin', 'day_of_week_cos', 'month_sin', 'month_cos', 'day_of_year_sin', 'day_of_year_cos', 'temp', 'rain_1h', 'snow_1h', 'clouds_all', 'weather_severity', 'total_precipitation', 'adverse_conditions_score', 'is_severe_weather', 'is_low_visibility', 'is_precipitating', 'is_raining', 'is_snowing', 'is_freezing', 'is_extreme_cold', 'is_hot', 'is_overcast', 'is_holiday', 'weather_Clear', 'weather_Clouds', 'weather_Drizzle', 'weather_Fog', 'weather_Haze', 'weather_Mist', 'weather_Rain', 'weather_Smoke', 'weather_Snow', 'weather_Squall', 'weather_Thunderstorm']
+2026-09-14 13:21:40 | INFO     | common                 | Chronological split — train 32,460 rows (2012-10-02 to 2017-10-26), test 8,115 rows (2017-10-26 to 2018-09-30)
+2026-09-14 13:21:42 | INFO     | common                 | Created MLflow experiment 'traffic-accident-risk-classification' (id 1)
+2026-09-14 13:21:42 | INFO     | __main__               | ========================================================================
+2026-09-14 13:21:42 | INFO     | __main__               | STAGE: Task 1a — Classification: proxy accident risk
+2026-09-14 13:21:42 | INFO     | __main__               | ========================================================================
+2026-09-14 13:21:42 | INFO     | common                 | Target 'high_risk' positive rate — train 13.52%, test 15.96%
+2026-09-14 13:21:42 | INFO     | __main__               | Majority-class baseline accuracy on the test set: 0.8404 — any model must beat this to be useful
+2026-09-14 13:21:42 | INFO     | __main__               | Training classifier: logistic_regression
+2026-09-14 13:21:43 | INFO     | __main__               | logistic_regression — accuracy 0.9632, precision 0.8180, recall 0.9892, F1 0.8955, ROC AUC 0.9930 (random split 0.9960, optimism +0.0029)
+2026-09-14 13:21:51 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/classifier_logistic_regression.joblib
+2026-09-14 13:21:51 | INFO     | __main__               | Training classifier: random_forest
+2026-09-14 13:21:56 | INFO     | __main__               | random_forest — accuracy 0.9829, precision 0.9164, recall 0.9822, F1 0.9482, ROC AUC 0.9963 (random split 0.9990, optimism +0.0027)
+2026-09-14 13:22:03 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/classifier_random_forest.joblib
+2026-09-14 13:22:04 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/07_classification_feature_importance.png
+2026-09-14 13:22:04 | INFO     | __main__               | Best classifier by ROC AUC: random_forest (0.9963)
+2026-09-14 13:22:04 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/08_classification_roc_curves.png
+2026-09-14 13:22:04 | INFO     | common                 | Created MLflow experiment 'traffic-volume-regression' (id 2)
+2026-09-14 13:22:04 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:04 | INFO     | __main__               | STAGE: Task 1b — Regression: hourly traffic volume
+2026-09-14 13:22:04 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:04 | INFO     | __main__               | Mean-prediction baseline — MAE 1724.0, R2 -0.0001. Any model must beat this.
+2026-09-14 13:22:04 | INFO     | __main__               | Training regressor: linear_regression
+2026-09-14 13:22:04 | INFO     | __main__               | linear_regression — MAE 645.0 vehicles (19.5% of mean), RMSE 861.6, R2 0.8087
+2026-09-14 13:22:10 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/regressor_linear_regression.joblib
+2026-09-14 13:22:10 | INFO     | __main__               | Training regressor: hist_gradient_boosting
+2026-09-14 13:22:13 | INFO     | __main__               | hist_gradient_boosting — MAE 225.8 vehicles (6.8% of mean), RMSE 372.5, R2 0.9643
+2026-09-14 13:22:19 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/regressor_hist_gradient_boosting.joblib
+2026-09-14 13:22:19 | INFO     | __main__               | Best regressor by MAE: hist_gradient_boosting (225.8 vehicles)
+2026-09-14 13:22:19 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/09_regression_diagnostics.png
+2026-09-14 13:22:19 | INFO     | __main__               | Error concentration — worst hour 16:00 (MAE 369), best hour 03:00 (MAE 53)
+2026-09-14 13:22:19 | WARNING  | __main__               | Error is unevenly distributed across the day: MAE at 16:00 is 7.0x the MAE at 03:00. This is recorded in the bias and fairness report.
+2026-09-14 13:22:19 | INFO     | __main__               | Results written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/supervised_results.json
+2026-09-14 13:22:19 | INFO     | __main__               | Supervised learning stage finished successfully
+2026-09-14 13:22:22 | INFO     | __main__               | ########################################################################
+2026-09-14 13:22:22 | INFO     | __main__               | Capstone Part 3, Task 2 — unsupervised learning
+2026-09-14 13:22:22 | INFO     | __main__               | ########################################################################
+2026-09-14 13:22:23 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
+2026-09-14 13:22:23 | INFO     | common                 | Proxy accident-risk label created — 5,682 high-risk hour(s) of 40,575 (14.00% positive class)
+2026-09-14 13:22:23 | DEBUG    | common                 | Label components — high/severe congestion: 20,287 hours (50.0%), risky weather: 12,088 hours (29.8%)
+2026-09-14 13:22:23 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:23 | INFO     | __main__               | STAGE: Task 2a — K-means clustering of traffic conditions
+2026-09-14 13:22:23 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:23 | INFO     | __main__               | Clustering on 4 features: ['hour', 'weather_severity', 'traffic_volume', 'temp']
+2026-09-14 13:22:23 | DEBUG    | __main__               | Feature means before scaling: {'hour': np.float64(11.515), 'weather_severity': np.float64(2.133), 'traffic_volume': np.float64(3290.759), 'temp': np.float64(281.381)}
+2026-09-14 13:22:25 | DEBUG    | __main__               | k=2 — inertia 113742.3, silhouette 0.3291, Calinski-Harabasz 17321.0
+2026-09-14 13:22:26 | DEBUG    | __main__               | k=3 — inertia 87778.9, silhouette 0.3483, Calinski-Harabasz 17222.1
+2026-09-14 13:22:27 | DEBUG    | __main__               | k=4 — inertia 69517.2, silhouette 0.3180, Calinski-Harabasz 18049.7
+2026-09-14 13:22:28 | DEBUG    | __main__               | k=5 — inertia 59521.8, silhouette 0.3278, Calinski-Harabasz 17513.5
+2026-09-14 13:22:30 | DEBUG    | __main__               | k=6 — inertia 50233.4, silhouette 0.3520, Calinski-Harabasz 18101.2
+2026-09-14 13:22:31 | DEBUG    | __main__               | k=7 — inertia 44571.6, silhouette 0.3434, Calinski-Harabasz 17858.9
+2026-09-14 13:22:34 | DEBUG    | __main__               | k=8 — inertia 39452.1, silhouette 0.3351, Calinski-Harabasz 18045.7
+2026-09-14 13:22:35 | DEBUG    | __main__               | k=9 — inertia 35185.4, silhouette 0.3448, Calinski-Harabasz 18319.2
+2026-09-14 13:22:38 | DEBUG    | __main__               | k=10 — inertia 32250.5, silhouette 0.3489, Calinski-Harabasz 18175.3
+2026-09-14 13:22:38 | INFO     | __main__               | Elbow suggests k=4; silhouette peaks at k=6 (0.3520)
+2026-09-14 13:22:38 | WARNING  | __main__               | Best silhouette across all k is only 0.352. Traffic conditions form a continuum rather than well-separated natural groups, so these clusters should be read as a useful partition of a gradient, not as discovered categories.
+2026-09-14 13:22:38 | INFO     | __main__               | Final K-means fitted with k=4, inertia 69517.2
+2026-09-14 13:22:38 | DEBUG    | __main__               | Cluster 0 centre (original units): {'hour': 2.82, 'weather_severity': 1.79, 'traffic_volume': 814.07, 'temp': 278.86}
+2026-09-14 13:22:38 | DEBUG    | __main__               | Cluster 1 centre (original units): {'hour': 13.37, 'weather_severity': 6.94, 'traffic_volume': 3853.98, 'temp': 281.66}
+2026-09-14 13:22:38 | DEBUG    | __main__               | Cluster 2 centre (original units): {'hour': 15.13, 'weather_severity': 0.68, 'traffic_volume': 4320.87, 'temp': 293.01}
+2026-09-14 13:22:38 | DEBUG    | __main__               | Cluster 3 centre (original units): {'hour': 14.62, 'weather_severity': 0.85, 'traffic_volume': 4149.27, 'temp': 269.06}
+2026-09-14 13:22:38 | INFO     | __main__               | Cluster 0 — 10,454 hours (25.8%): Overnight near-empty traffic, cool mixed weather | mean volume 814, mean hour 2.8, severity 1.78, 36% weekend
+2026-09-14 13:22:38 | INFO     | __main__               | Cluster 1 — 7,298 hours (18.0%): Midday moderate traffic, cool adverse weather | mean volume 3852, mean hour 13.4, severity 6.94, 25% weekend
+2026-09-14 13:22:38 | INFO     | __main__               | Cluster 2 — 12,750 hours (31.4%): Afternoon And Evening moderate traffic, warm fair weather | mean volume 4321, mean hour 15.1, severity 0.68, 27% weekend
+2026-09-14 13:22:39 | INFO     | __main__               | Cluster 3 — 10,073 hours (24.8%): Midday moderate traffic, sub-zero fair weather | mean volume 4151, mean hour 14.6, severity 0.85, 26% weekend
+2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/10_kmeans_selection.png
+2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/11_kmeans_clusters.png
+2026-09-14 13:22:39 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:39 | INFO     | __main__               | STAGE: Task 2b — Association rule mining
+2026-09-14 13:22:39 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:39 | DEBUG    | __main__               | Weather category 'Squall' excluded from rule mining (only 1 hours)
+2026-09-14 13:22:39 | DEBUG    | __main__               | Weather category 'Smoke' excluded from rule mining (only 16 hours)
+2026-09-14 13:22:39 | INFO     | __main__               | Transaction matrix built — 40,575 hours x 24 items
+2026-09-14 13:22:39 | DEBUG    | __main__               | Items: ['time=Morning Peak', 'time=Midday', 'time=Evening Peak', 'time=Evening', 'time=Night', 'day=Weekend', 'day=Weekday', 'weather=Clouds', 'weather=Clear', 'weather=Rain', 'weather=Drizzle', 'weather=Mist', 'weather=Fog', 'weather=Thunderstorm', 'weather=Haze', 'weather=Snow', 'weather=Precipitating', 'weather=LowVisibility', 'temp=Freezing', 'holiday=Yes', 'congestion=Low', 'congestion=Medium', 'congestion=High', 'congestion=Severe']
+2026-09-14 13:22:39 | INFO     | __main__               | Apriori found 248 frequent itemset(s) at min_support=0.02
+2026-09-14 13:22:39 | INFO     | __main__               | Generated 454 rule(s) at min_confidence=0.30
+2026-09-14 13:22:39 | INFO     | __main__               | 77 rule(s) conclude with a congestion level
+2026-09-14 13:22:39 | INFO     | __main__               | Top 5 rules by lift:
+2026-09-14 13:22:39 | INFO     | __main__               |   day=Weekend AND temp=Freezing AND time=Night -> congestion=Low | support 0.022, confidence 0.947, lift 3.79
+2026-09-14 13:22:39 | INFO     | __main__               |   day=Weekend AND time=Night -> congestion=Low | support 0.064, confidence 0.897, lift 3.59
+2026-09-14 13:22:39 | INFO     | __main__               |   day=Weekend AND time=Night AND weather=Clear -> congestion=Low | support 0.027, confidence 0.880, lift 3.52
+2026-09-14 13:22:39 | INFO     | __main__               |   temp=Freezing AND time=Night AND weather=Clear -> congestion=Low | support 0.027, confidence 0.865, lift 3.46
+2026-09-14 13:22:39 | INFO     | __main__               |   temp=Freezing AND time=Night AND weather=Clouds -> congestion=Low | support 0.023, confidence 0.863, lift 3.45
+2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/12_association_rules.png
+2026-09-14 13:22:39 | INFO     | __main__               | Results written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/unsupervised_results.json
+2026-09-14 13:22:39 | INFO     | __main__               | Cluster assignments written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/clustered_hours.csv
+2026-09-14 13:22:39 | INFO     | __main__               | Unsupervised stage finished successfully
+2026-09-14 13:22:41 | INFO     | __main__               | ########################################################################
+2026-09-14 13:22:41 | INFO     | __main__               | Capstone Part 3, Task 3 — deep learning and explainability
+2026-09-14 13:22:41 | INFO     | __main__               | ########################################################################
+2026-09-14 13:22:42 | INFO     | common                 | MLflow tracking URI: sqlite:////home/claude/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
+2026-09-14 13:22:43 | INFO     | common                 | Created MLflow experiment 'traffic-lstm-demand-forecast' (id 3)
+2026-09-14 13:22:44 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
+2026-09-14 13:22:44 | INFO     | common                 | Proxy accident-risk label created — 5,682 high-risk hour(s) of 40,575 (14.00% positive class)
+2026-09-14 13:22:44 | DEBUG    | common                 | Label components — high/severe congestion: 20,287 hours (50.0%), risky weather: 12,088 hours (29.8%)
+2026-09-14 13:22:44 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:44 | INFO     | __main__               | STAGE: Task 3 — LSTM demand forecasting
+2026-09-14 13:22:44 | INFO     | __main__               | ========================================================================
+2026-09-14 13:22:45 | DEBUG    | tensorflow             | Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-09-14 13:22:46 | DEBUG    | h5py._conv             | Creating converter from 7 to 5
+2026-09-14 13:22:46 | DEBUG    | h5py._conv             | Creating converter from 5 to 7
+2026-09-14 13:22:46 | DEBUG    | h5py._conv             | Creating converter from 7 to 5
+2026-09-14 13:22:46 | DEBUG    | h5py._conv             | Creating converter from 5 to 7
+2026-09-14 13:22:46 | INFO     | __main__               | Sequence construction — 2,589 contiguous run(s) of hourly data; 173 run(s) are longer than the 24-hour window
+2026-09-14 13:22:46 | DEBUG    | __main__               | Longest run: 1915 hours; median run: 2 hours
+2026-09-14 13:22:46 | WARNING  | __main__               | Dropped 7,552 row(s) sitting in runs shorter than the 24-hour window; no valid sequence can be formed from them
+2026-09-14 13:22:47 | DEBUG    | __main__               | Sequences sorted chronologically: 2012-10-04 18:00:00 to 2018-09-30 23:00:00
+2026-09-14 13:22:47 | INFO     | __main__               | Built 28,871 sequence(s) of shape (24, 10) from 40,575 row(s)
+2026-09-14 13:22:47 | WARNING  | __main__               | Only 71.2% of rows yielded a usable sequence, because of the sensor outages. The LSTM therefore trains on less data than the tabular models, which is a fair-comparison caveat.
+2026-09-14 13:22:47 | INFO     | __main__               | Chronological sequence split — train 23,096, test 5,775 (test begins 2018-01-21)
+2026-09-14 13:22:47 | DEBUG    | __main__               | Input scaler means: [3280.233, 282.022, 2.053, 0.296, 0.0, 0.0, -0.022, 0.006, 0.049, 0.001]
+2026-09-14 13:22:47 | DEBUG    | __main__               | Target scaler — mean 3280.47, scale 1967.40
+2026-09-14 13:22:47 | INFO     | __main__               | LSTM built — 64 -> 32 units, dropout 0.2, 32,161 trainable parameters
+2026-09-14 13:25:54 | INFO     | __main__               | LSTM trained for 40 epoch(s) in 186.3 seconds (early stopping patience 5)
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 01 — loss 0.25291, val_loss 0.11849, mae 0.36582
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 02 — loss 0.10059, val_loss 0.08947, mae 0.23397
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 03 — loss 0.08305, val_loss 0.08330, mae 0.21231
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 04 — loss 0.07338, val_loss 0.07505, mae 0.19865
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 05 — loss 0.06538, val_loss 0.06409, mae 0.18661
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 06 — loss 0.06094, val_loss 0.06012, mae 0.18059
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 07 — loss 0.05657, val_loss 0.05692, mae 0.17324
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 08 — loss 0.05379, val_loss 0.05678, mae 0.17030
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 09 — loss 0.05097, val_loss 0.05594, mae 0.16414
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 10 — loss 0.04862, val_loss 0.05061, mae 0.16129
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 11 — loss 0.04553, val_loss 0.04839, mae 0.15592
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 12 — loss 0.04443, val_loss 0.04804, mae 0.15370
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 13 — loss 0.04329, val_loss 0.04846, mae 0.15131
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 14 — loss 0.04100, val_loss 0.04610, mae 0.14759
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 15 — loss 0.03973, val_loss 0.04609, mae 0.14481
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 16 — loss 0.03925, val_loss 0.04867, mae 0.14403
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 17 — loss 0.03866, val_loss 0.04593, mae 0.14266
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 18 — loss 0.03760, val_loss 0.04487, mae 0.14105
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 19 — loss 0.03525, val_loss 0.04166, mae 0.13641
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 20 — loss 0.03469, val_loss 0.04342, mae 0.13480
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 21 — loss 0.03337, val_loss 0.04178, mae 0.13271
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 22 — loss 0.03229, val_loss 0.04046, mae 0.13058
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 23 — loss 0.03162, val_loss 0.04076, mae 0.12895
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 24 — loss 0.03101, val_loss 0.03938, mae 0.12722
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 25 — loss 0.03018, val_loss 0.03837, mae 0.12549
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 26 — loss 0.02989, val_loss 0.04098, mae 0.12526
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 27 — loss 0.02974, val_loss 0.03843, mae 0.12439
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 28 — loss 0.02926, val_loss 0.03997, mae 0.12304
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 29 — loss 0.02810, val_loss 0.03796, mae 0.12050
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 30 — loss 0.02608, val_loss 0.03529, mae 0.11547
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 31 — loss 0.02620, val_loss 0.03543, mae 0.11583
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 32 — loss 0.02535, val_loss 0.03380, mae 0.11361
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 33 — loss 0.02523, val_loss 0.03396, mae 0.11303
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 34 — loss 0.02503, val_loss 0.03309, mae 0.11260
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 35 — loss 0.02465, val_loss 0.03413, mae 0.11121
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 36 — loss 0.02453, val_loss 0.03278, mae 0.11089
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 37 — loss 0.02421, val_loss 0.03309, mae 0.11006
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 38 — loss 0.02392, val_loss 0.03337, mae 0.10971
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 39 — loss 0.02364, val_loss 0.03397, mae 0.10929
+2026-09-14 13:25:54 | DEBUG    | __main__               | epoch 40 — loss 0.02398, val_loss 0.03323, mae 0.10950
+2026-09-14 13:25:55 | INFO     | __main__               | LSTM test performance — MAE 255.7 vehicles (7.7% of mean), RMSE 320.0, R2 0.9740
+2026-09-14 13:25:55 | INFO     | __main__               | Persistence baseline (predict previous hour) — MAE 590.6. LSTM improves on it by 334.9 vehicles (56.7%).
+2026-09-14 13:25:55 | DEBUG    | h5py._conv             | Creating converter from 5 to 3
+2026-09-14 13:26:02 | INFO     | __main__               | LSTM saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/lstm_traffic_forecast.keras
+2026-09-14 13:26:03 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/13_lstm_training_history.png
+2026-09-14 13:26:03 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/14_lstm_predictions.png
+2026-09-14 13:26:03 | INFO     | __main__               | ========================================================================
+2026-09-14 13:26:03 | INFO     | __main__               | STAGE: Task 3 — SHAP explainability
+2026-09-14 13:26:03 | INFO     | __main__               | ========================================================================
+2026-09-14 13:26:03 | INFO     | common                 | Feature set assembled: 44 features
+2026-09-14 13:26:03 | DEBUG    | common                 | Features: ['hour', 'day_of_week', 'is_weekend', 'month', 'day_of_year', 'is_morning_rush', 'is_evening_rush', 'is_rush_hour', 'hour_sin', 'hour_cos', 'day_of_week_sin', 'day_of_week_cos', 'month_sin', 'month_cos', 'day_of_year_sin', 'day_of_year_cos', 'temp', 'rain_1h', 'snow_1h', 'clouds_all', 'weather_severity', 'total_precipitation', 'adverse_conditions_score', 'is_severe_weather', 'is_low_visibility', 'is_precipitating', 'is_raining', 'is_snowing', 'is_freezing', 'is_extreme_cold', 'is_hot', 'is_overcast', 'is_holiday', 'weather_Clear', 'weather_Clouds', 'weather_Drizzle', 'weather_Fog', 'weather_Haze', 'weather_Mist', 'weather_Rain', 'weather_Smoke', 'weather_Snow', 'weather_Squall', 'weather_Thunderstorm']
+2026-09-14 13:26:03 | INFO     | common                 | Chronological split — train 32,460 rows (2012-10-02 to 2017-10-26), test 8,115 rows (2017-10-26 to 2018-09-30)
+2026-09-14 13:26:03 | INFO     | __main__               | Applying SHAP to a Random Forest trained on the same target as the LSTM. The brief permits this substitution; the reasoning is that an LSTM attributes across 24 timesteps x 10 features, which does not reduce to the per-feature story a mobility team needs.
+2026-09-14 13:26:16 | INFO     | __main__               | Surrogate Random Forest — MAE 237.1, R2 0.9571
+2026-09-14 13:26:16 | INFO     | __main__               | Computing SHAP values on a 1,200-row sample
+2026-09-14 13:29:07 | INFO     | __main__               | SHAP values computed in 171.2 seconds
+2026-09-14 13:29:07 | INFO     | __main__               | Top 10 features by mean |SHAP value|:
+2026-09-14 13:29:07 | INFO     | __main__               |   hour_cos                       1429.3 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   hour                            442.3 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   hour_sin                        189.5 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   day_of_week                     156.9 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   is_weekend                      123.0 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   day_of_week_sin                 119.9 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   day_of_year_cos                  89.8 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   is_rush_hour                     59.3 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   day_of_week_cos                  57.3 vehicles
+2026-09-14 13:29:07 | INFO     | __main__               |   day_of_year_sin                  31.5 vehicles
+2026-09-14 13:29:08 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/15_shap_summary.png
+2026-09-14 13:29:08 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/16_shap_feature_importance.png
+2026-09-14 13:29:08 | INFO     | __main__               | Results written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/deep_learning_results.json
+2026-09-14 13:29:08 | INFO     | __main__               | Deep learning stage finished successfully
+2026-09-14 13:29:11 | INFO     | __main__               | ########################################################################
+2026-09-14 13:29:11 | INFO     | __main__               | Capstone Part 3, Task 6 — monitoring and alerting
+2026-09-14 13:29:11 | INFO     | __main__               | ########################################################################
+2026-09-14 13:29:11 | INFO     | __main__               | ========================================================================
+2026-09-14 13:29:11 | INFO     | __main__               | STAGE: Task 6.4 / 6.5 — Monitoring and alerting simulation
+2026-09-14 13:29:11 | INFO     | __main__               | ========================================================================
+2026-09-14 13:29:11 | INFO     | __main__               | Loaded regressor from regressor_hist_gradient_boosting.joblib (44 features)
+2026-09-14 13:29:12 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
+2026-09-14 13:29:12 | INFO     | common                 | Chronological split — train 32,460 rows (2012-10-02 to 2017-10-26), test 8,115 rows (2017-10-26 to 2018-09-30)
+2026-09-14 13:29:14 | INFO     | __main__               | Error baseline from a season-spanning validation year (2016-10-26 to 2017-10-26, 8,703 hours): overall MAE 241.1; monthly range 189.0 (month 08) to 320.5 (month 11)
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 01: 293.9
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 02: 224.5
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 03: 215.7
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 04: 193.7
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 05: 189.2
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 06: 219.3
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 07: 308.0
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 08: 189.0
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 09: 230.8
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 10: 214.8
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 11: 320.5
+2026-09-14 13:29:14 | DEBUG    | __main__               | Baseline MAE for calendar month 12: 292.8
+2026-09-14 13:29:14 | DEBUG    | __main__               | PSI calibration for 'temp': {'n_months': 50, 'median_psi': 0.16464844383282404, 'p95_psi': 1.7817301246186754}
+2026-09-14 13:29:15 | DEBUG    | __main__               | PSI calibration for 'clouds_all': {'n_months': 50, 'median_psi': 0.8285877373202082, 'p95_psi': 3.246550429119393}
+2026-09-14 13:29:15 | DEBUG    | __main__               | PSI calibration for 'rain_1h': {'n_months': 50, 'median_psi': 0.0, 'p95_psi': 1.1632273260936832}
+2026-09-14 13:29:15 | DEBUG    | __main__               | PSI calibration for 'weather_severity': {'n_months': 50, 'median_psi': 0.2455689821036801, 'p95_psi': 1.9825296752075412}
+2026-09-14 13:29:15 | DEBUG    | __main__               | PSI calibration for 'hour': {'n_months': 50, 'median_psi': 0.0017692795779162026, 'p95_psi': 0.018264818138616443}
+2026-09-14 13:29:15 | DEBUG    | __main__               | PSI calibration for 'is_weekend': {'n_months': 50, 'median_psi': 0.002506950585033643, 'p95_psi': 0.013648840731212806}
+2026-09-14 13:29:15 | DEBUG    | __main__               | PSI calibration for 'adverse_conditions_score': {'n_months': 50, 'median_psi': 0.34470148620299684, 'p95_psi': 1.3720719135357498}
+2026-09-14 13:29:15 | INFO     | __main__               | PSI alert thresholds calibrated from 50 training months: {'temp': 1.782, 'clouds_all': 3.247, 'rain_1h': 1.163, 'weather_severity': 1.983, 'hour': 0.25, 'is_weekend': 0.25, 'adverse_conditions_score': 1.372}
+2026-09-14 13:29:15 | INFO     | __main__               | Alert policy — error ratio > 1.40 against the same-calendar-month baseline, or any feature PSI > 0.25 against the same-calendar-month training reference
+2026-09-14 13:29:15 | WARNING  | __main__               | Window 2017-10 skipped — only 126 hours (< 300 minimum)
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2017-11 — PASS (MAE 223, ratio 0.70, max PSI 1.833)
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2017-12 — PASS (MAE 290, ratio 0.99, max PSI 2.389)
+2026-09-14 13:29:15 | INFO     | __main__               |   moderate drift (warn) in: clouds_all
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2018-01 — PASS (MAE 317, ratio 1.08, max PSI 2.109)
+2026-09-14 13:29:15 | INFO     | __main__               |   moderate drift (warn) in: clouds_all
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2018-02 — PASS (MAE 238, ratio 1.06, max PSI 0.773)
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2018-03 — PASS (MAE 212, ratio 0.98, max PSI 0.535)
+2026-09-14 13:29:15 | WARNING  | __main__               | Monitoring window 2018-04 — ALERT: MAE 307 is 1.58x the baseline 194; significant feature drift in: rain_1h
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2018-05 — PASS (MAE 186, ratio 0.98, max PSI 0.538)
+2026-09-14 13:29:15 | WARNING  | __main__               | Monitoring window 2018-06 — ALERT: significant feature drift in: rain_1h
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2018-07 — PASS (MAE 173, ratio 0.56, max PSI 0.765)
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2018-08 — PASS (MAE 154, ratio 0.81, max PSI 2.037)
+2026-09-14 13:29:15 | INFO     | __main__               |   moderate drift (warn) in: clouds_all
+2026-09-14 13:29:15 | INFO     | __main__               | Monitoring window 2018-09 — PASS (MAE 217, ratio 0.94, max PSI 0.464)
+2026-09-14 13:29:15 | INFO     | __main__               | Real-data monitoring complete — 11 window(s), 2 ALERT, 9 PASS
+2026-09-14 13:29:15 | INFO     | __main__               | ========================================================================
+2026-09-14 13:29:15 | INFO     | __main__               | STAGE: Synthetic drift scenarios
+2026-09-14 13:29:15 | INFO     | __main__               | ========================================================================
+2026-09-14 13:29:16 | WARNING  | __main__               | Monitoring window synthetic: temperature sensor +12 K bias — ALERT: significant feature drift in: temp
+2026-09-14 13:29:16 | WARNING  | __main__               | Monitoring window synthetic: demand +35% (new development opens) — ALERT: MAE 1110 is 4.81x the baseline 231
+2026-09-14 13:29:16 | WARNING  | __main__               | Monitoring window synthetic: peak shifts 2 hours later — ALERT: MAE 1068 is 4.63x the baseline 231
+2026-09-14 13:29:16 | INFO     | __main__               | All 3 synthetic drift scenarios raised an ALERT — the detector responds to both feature drift and error drift
+2026-09-14 13:29:16 | INFO     | __main__               | Monitoring report written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/monitoring_report.json
+2026-09-14 13:29:16 | INFO     | __main__               | Monitoring dashboard written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/MONITORING_DASHBOARD.md
+2026-09-14 13:29:16 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/17_monitoring_dashboard.png
+2026-09-14 13:29:16 | INFO     | __main__               | Monitoring stage finished — overall status ALERT
+2026-09-14 13:29:17 | INFO     | __main__               | ========================================================================
+2026-09-14 13:29:17 | INFO     | __main__               | STAGE: Task 6.1 / 6.2 — Model registry and experiment summary
+2026-09-14 13:29:17 | INFO     | __main__               | ========================================================================
+2026-09-14 13:29:18 | INFO     | common                 | MLflow tracking URI: sqlite:////home/claude/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
+2026-09-14 13:29:18 | INFO     | __main__               | Experiment 'traffic-accident-risk-classification' — 2 run(s)
+2026-09-14 13:29:18 | INFO     | __main__               | Experiment 'traffic-volume-regression' — 2 run(s)
+2026-09-14 13:29:18 | INFO     | __main__               | Experiment 'traffic-lstm-demand-forecast' — 1 run(s)
+2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_risk_classifier v1 from run 'clf_random_forest' as champion (roc_auc=0.9963)
+2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_risk_classifier v2 from run 'clf_logistic_regression' as challenger (roc_auc=0.9930)
+2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_volume_regressor v1 from run 'reg_hist_gradient_boosting' as champion (mae=225.7681)
+2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_volume_regressor v2 from run 'reg_linear_regression' as challenger (mae=645.0337)
+2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_lstm_forecaster v1 from run 'lstm_traffic_forecast' as champion (mae=255.7428)
+2026-09-14 13:29:19 | INFO     | __main__               | Model registry document written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/MODEL_REGISTRY.md
+2026-09-14 13:29:19 | INFO     | __main__               | Experiment summary written with 5 run(s)
+2026-09-14 13:29:19 | INFO     | __main__               | Model registry stage finished — 5 version(s) recorded
+2026-09-14 13:29:20 | INFO     | __main__               | Recommender invoked with {'day_type': 'weekday', 'date': None, 'weather': None, 'temp': None, 'earliest': 7, 'latest': 19, 'duration': 2, 'historical': False, 'json': False}
+2026-09-14 13:29:20 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
+2026-09-14 13:29:21 | INFO     | __main__               | Recommender profile built from 40,575 hours
+2026-09-14 13:29:21 | INFO     | __main__               | Recommender profile saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/recommender_profile.json
+2026-09-14 13:29:21 | INFO     | __main__               | Historical mode — weekday, all weather
+2026-09-14 13:29:21 | INFO     | __main__               | Recommendation produced in historical mode: best window 19:00-21:00
+2026-09-14 13:29:21 | INFO     | __main__               | Recommender invoked with {'day_type': 'weekday', 'date': '2018-07-04', 'weather': 'Rain', 'temp': None, 'earliest': 6, 'latest': 20, 'duration': 1, 'historical': False, 'json': False}
+2026-09-14 13:29:21 | INFO     | __main__               | Recommender profile loaded from recommender_profile.json
+2026-09-14 13:29:22 | INFO     | __main__               | Model mode — predicted 24 hours for 2018-07-04 (weekday, Rain)
+2026-09-14 13:29:22 | INFO     | __main__               | Recommendation produced in model mode: best window 20:00-21:00

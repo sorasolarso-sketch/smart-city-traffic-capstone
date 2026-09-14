@@ -1,0 +1,22 @@
+artifact_path: file:///home/claude/smart-city-traffic-capstone/part3_machine_learning/mlruns/models/m-6349f963571349118e72c209cfb5cc4a/artifacts
+flavors:
+  python_function:
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.tensorflow
+    python_version: 3.11.15
+  tensorflow:
+    code: null
+    data: data
+    keras_version: 2.21.0
+    model_type: keras
+    save_format: tf
+mlflow_version: 3.16.0
+model_id: m-6349f963571349118e72c209cfb5cc4a
+model_size_bytes: 428017
+model_uuid: m-6349f963571349118e72c209cfb5cc4a
+prompts: null
+run_id: 022d69463b8b4b41819edc7d070f742f
+utc_time_created: '2026-09-14 13:25:55.831627'
