@@ -1,0 +1,47 @@
+2026-09-14 13:29:23 | INFO     | app                    | API starting — loading models
+2026-09-14 13:29:24 | INFO     | app                    | Regressor loaded from regressor_hist_gradient_boosting.joblib
+2026-09-14 13:29:24 | INFO     | app                    | Classifier loaded from classifier_random_forest.joblib
+2026-09-14 13:29:24 | INFO     | recommender            | Recommender profile loaded from recommender_profile.json
+2026-09-14 13:29:24 | INFO     | app                    | GET /health -> ok
+2026-09-14 13:29:24 | INFO     | httpx                  | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-09-14 13:29:24 | INFO     | app                    | API shutting down
+2026-09-14 13:29:24 | DEBUG    | asyncio                | Using selector: EpollSelector
+2026-09-14 13:29:24 | INFO     | app                    | API starting — loading models
+2026-09-14 13:29:24 | INFO     | app                    | Regressor loaded from regressor_hist_gradient_boosting.joblib
+2026-09-14 13:29:24 | INFO     | app                    | Classifier loaded from classifier_random_forest.joblib
+2026-09-14 13:29:24 | INFO     | recommender            | Recommender profile loaded from recommender_profile.json
+2026-09-14 13:29:24 | INFO     | app                    | POST /predict/volume {'date': datetime.date(2018, 3, 14), 'hour': 17, 'weather': 'Clouds', 'temp_celsius': 2.0}
+2026-09-14 13:29:24 | INFO     | httpx                  | HTTP Request: POST http://testserver/predict/volume "HTTP/1.1 200 OK"
+2026-09-14 13:29:24 | INFO     | app                    | POST /predict/volume {'date': datetime.date(2018, 3, 14), 'hour': 3, 'weather': 'Clouds', 'temp_celsius': 2.0}
+2026-09-14 13:29:24 | INFO     | httpx                  | HTTP Request: POST http://testserver/predict/volume "HTTP/1.1 200 OK"
+2026-09-14 13:29:24 | INFO     | app                    | API shutting down
+2026-09-14 13:29:24 | DEBUG    | asyncio                | Using selector: EpollSelector
+2026-09-14 13:29:24 | INFO     | app                    | API starting — loading models
+2026-09-14 13:29:24 | INFO     | app                    | Regressor loaded from regressor_hist_gradient_boosting.joblib
+2026-09-14 13:29:24 | INFO     | app                    | Classifier loaded from classifier_random_forest.joblib
+2026-09-14 13:29:24 | INFO     | recommender            | Recommender profile loaded from recommender_profile.json
+2026-09-14 13:29:24 | INFO     | app                    | POST /predict/risk {'date': datetime.date(2018, 3, 14), 'hour': 17, 'weather': 'Snow', 'temp_celsius': -3.0}
+2026-09-14 13:29:24 | INFO     | httpx                  | HTTP Request: POST http://testserver/predict/risk "HTTP/1.1 200 OK"
+2026-09-14 13:29:24 | INFO     | app                    | POST /predict/risk {'date': datetime.date(2018, 3, 14), 'hour': 3, 'weather': 'Clear', 'temp_celsius': -3.0}
+2026-09-14 13:29:24 | INFO     | httpx                  | HTTP Request: POST http://testserver/predict/risk "HTTP/1.1 200 OK"
+2026-09-14 13:29:24 | INFO     | app                    | API shutting down
+2026-09-14 13:29:24 | DEBUG    | asyncio                | Using selector: EpollSelector
+2026-09-14 13:29:24 | INFO     | app                    | API starting — loading models
+2026-09-14 13:29:24 | INFO     | app                    | Regressor loaded from regressor_hist_gradient_boosting.joblib
+2026-09-14 13:29:25 | INFO     | app                    | Classifier loaded from classifier_random_forest.joblib
+2026-09-14 13:29:25 | INFO     | recommender            | Recommender profile loaded from recommender_profile.json
+2026-09-14 13:29:25 | INFO     | httpx                  | HTTP Request: POST http://testserver/predict/volume "HTTP/1.1 422 Unprocessable Entity"
+2026-09-14 13:29:25 | INFO     | httpx                  | HTTP Request: POST http://testserver/predict/volume "HTTP/1.1 422 Unprocessable Entity"
+2026-09-14 13:29:25 | INFO     | app                    | POST /recommend {'date': None, 'day_type': 'weekday', 'weather': None, 'temp_celsius': None, 'earliest': 20, 'latest': 6, 'duration': 1}
+2026-09-14 13:29:25 | ERROR    | app                    | POST /recommend rejected: earliest (20:00) is after latest (06:00)
+2026-09-14 13:29:25 | INFO     | httpx                  | HTTP Request: POST http://testserver/recommend "HTTP/1.1 422 Unprocessable Entity"
+2026-09-14 13:29:25 | INFO     | app                    | API shutting down
+2026-09-14 13:29:25 | DEBUG    | asyncio                | Using selector: EpollSelector
+2026-09-14 13:29:25 | INFO     | app                    | API starting — loading models
+2026-09-14 13:29:25 | INFO     | app                    | Regressor loaded from regressor_hist_gradient_boosting.joblib
+2026-09-14 13:29:25 | INFO     | app                    | Classifier loaded from classifier_random_forest.joblib
+2026-09-14 13:29:25 | INFO     | recommender            | Recommender profile loaded from recommender_profile.json
+2026-09-14 13:29:25 | INFO     | app                    | POST /recommend {'date': datetime.date(2018, 7, 4), 'day_type': 'weekday', 'weather': 'Rain', 'temp_celsius': None, 'earliest': 6, 'latest': 20, 'duration': 1}
+2026-09-14 13:29:25 | INFO     | recommender            | Model mode — predicted 24 hours for 2018-07-04 (weekday, Rain)
+2026-09-14 13:29:25 | INFO     | httpx                  | HTTP Request: POST http://testserver/recommend "HTTP/1.1 200 OK"
+2026-09-14 13:29:25 | INFO     | app                    | API shutting down
