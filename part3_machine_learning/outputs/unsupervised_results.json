@@ -1,0 +1,329 @@
+{
+  "kmeans": {
+    "features": [
+      "hour",
+      "weather_severity",
+      "traffic_volume",
+      "temp"
+    ],
+    "k_selection": {
+      "inertia": {
+        "2": 113742.3022607208,
+        "3": 87778.88207086752,
+        "4": 69517.21725150055,
+        "5": 59521.76952013596,
+        "6": 50233.441237736624,
+        "7": 44571.64142648613,
+        "8": 39452.09396336914,
+        "9": 35185.41529425571,
+        "10": 32250.472802586748
+      },
+      "silhouette": {
+        "2": 0.3291214682907761,
+        "3": 0.34832033089151054,
+        "4": 0.31803627005028073,
+        "5": 0.32779265455641315,
+        "6": 0.3519663557294782,
+        "7": 0.3433779849433319,
+        "8": 0.33509891699127237,
+        "9": 0.3448146433024887,
+        "10": 0.3489077293534188
+      },
+      "calinski_harabasz": {
+        "2": 17321.017462734468,
+        "3": 17222.086887275822,
+        "4": 18049.699491389907,
+        "5": 17513.535710458083,
+        "6": 18101.229146054895,
+        "7": 17858.912110421195,
+        "8": 18045.65705716395,
+        "9": 18319.18706824392,
+        "10": 18175.335175607826
+      },
+      "elbow_k": 4,
+      "silhouette_best_k": 6,
+      "chosen_k": 4
+    },
+    "chosen_k": 4,
+    "inertia": 69517.21725150055,
+    "silhouette_at_chosen_k": 0.31803627005028073,
+    "cluster_centres_original_units": {
+      "0": {
+        "hour": 2.824,
+        "weather_severity": 1.786,
+        "traffic_volume": 814.068,
+        "temp": 278.86
+      },
+      "1": {
+        "hour": 13.366,
+        "weather_severity": 6.944,
+        "traffic_volume": 3853.983,
+        "temp": 281.662
+      },
+      "2": {
+        "hour": 15.126,
+        "weather_severity": 0.676,
+        "traffic_volume": 4320.873,
+        "temp": 293.008
+      },
+      "3": {
+        "hour": 14.622,
+        "weather_severity": 0.854,
+        "traffic_volume": 4149.269,
+        "temp": 269.062
+      }
+    },
+    "cluster_profiles": {
+      "0": {
+        "hours": 10454,
+        "share_pct": 25.764633394947626,
+        "mean_traffic_volume": 814.3250430457241,
+        "mean_hour": 2.824947388559403,
+        "modal_hours": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "mean_weather_severity": 1.783527836234934,
+        "mean_temp_celsius": 5.714499904342858,
+        "weekend_share_pct": 36.13927683183471,
+        "top_weather": {
+          "Clear": 0.404,
+          "Clouds": 0.303,
+          "Rain": 0.095
+        },
+        "congestion_mix": {
+          "Low": 0.84,
+          "Medium": 0.16
+        },
+        "label": "Overnight near-empty traffic, cool mixed weather"
+      },
+      "1": {
+        "hours": 7298,
+        "share_pct": 17.986444855206408,
+        "mean_traffic_volume": 3851.958618799671,
+        "mean_hour": 13.36174294327213,
+        "modal_hours": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "mean_weather_severity": 6.943820224719101,
+        "mean_temp_celsius": 8.500303096738833,
+        "weekend_share_pct": 24.97944642367772,
+        "top_weather": {
+          "Rain": 0.483,
+          "Snow": 0.311,
+          "Thunderstorm": 0.138
+        },
+        "congestion_mix": {
+          "High": 0.313,
+          "Medium": 0.302,
+          "Severe": 0.292,
+          "Low": 0.094
+        },
+        "label": "Midday moderate traffic, cool adverse weather"
+      },
+      "2": {
+        "hours": 12750,
+        "share_pct": 31.423290203327173,
+        "mean_traffic_volume": 4320.534823529411,
+        "mean_hour": 15.129019607843137,
+        "modal_hours": [
+          15,
+          14,
+          16,
+          17
+        ],
+        "mean_weather_severity": 0.675843137254902,
+        "mean_temp_celsius": 19.864708627451023,
+        "weekend_share_pct": 26.525490196078433,
+        "top_weather": {
+          "Clouds": 0.507,
+          "Clear": 0.438,
+          "Mist": 0.031
+        },
+        "congestion_mix": {
+          "High": 0.36,
+          "Severe": 0.359,
+          "Medium": 0.257,
+          "Low": 0.024
+        },
+        "label": "Afternoon And Evening moderate traffic, warm fair weather"
+      },
+      "3": {
+        "hours": 10073,
+        "share_pct": 24.825631546518792,
+        "mean_traffic_volume": 4150.818723319766,
+        "mean_hour": 14.620272014295642,
+        "modal_hours": [
+          23,
+          22,
+          10,
+          9
+        ],
+        "mean_weather_severity": 0.8541645984314504,
+        "mean_temp_celsius": -4.078026307951916,
+        "weekend_share_pct": 25.940633376352622,
+        "top_weather": {
+          "Clouds": 0.546,
+          "Clear": 0.352,
+          "Mist": 0.059
+        },
+        "congestion_mix": {
+          "Severe": 0.341,
+          "High": 0.325,
+          "Medium": 0.297,
+          "Low": 0.037
+        },
+        "label": "Midday moderate traffic, sub-zero fair weather"
+      }
+    }
+  },
+  "association_rules": {
+    "min_support": 0.02,
+    "min_confidence": 0.3,
+    "frequent_itemsets": 248,
+    "total_rules": 454,
+    "congestion_rules": 77,
+    "top_rules_by_lift": [
+      {
+        "antecedent": "day=Weekend AND temp=Freezing AND time=Night",
+        "consequent": "congestion=Low",
+        "support": 0.022402957486136785,
+        "confidence": 0.9468750000000001,
+        "lift": 3.7862868951414215,
+        "hours_matching": 909,
+        "plain_language": "When weekend and freezing and night, congestion is low 95% of the time \u2014 3.79 times more often than the low level occurs overall. This pattern covers 909 hours."
+      },
+      {
+        "antecedent": "day=Weekend AND time=Night",
+        "consequent": "congestion=Low",
+        "support": 0.06437461491065927,
+        "confidence": 0.8966700995537246,
+        "lift": 3.5855316142103453,
+        "hours_matching": 2612,
+        "plain_language": "When weekend and night, congestion is low 90% of the time \u2014 3.59 times more often than the low level occurs overall. This pattern covers 2,612 hours."
+      },
+      {
+        "antecedent": "day=Weekend AND time=Night AND weather=Clear",
+        "consequent": "congestion=Low",
+        "support": 0.026568083795440543,
+        "confidence": 0.88,
+        "lift": 3.5188725731743373,
+        "hours_matching": 1078,
+        "plain_language": "When weekend and night and clear, congestion is low 88% of the time \u2014 3.52 times more often than the low level occurs overall. This pattern covers 1,078 hours."
+      },
+      {
+        "antecedent": "temp=Freezing AND time=Night AND weather=Clear",
+        "consequent": "congestion=Low",
+        "support": 0.02674060382008626,
+        "confidence": 0.8645418326693227,
+        "lift": 3.4570597083431327,
+        "hours_matching": 1085,
+        "plain_language": "When freezing and night and clear, congestion is low 86% of the time \u2014 3.46 times more often than the low level occurs overall. This pattern covers 1,085 hours."
+      },
+      {
+        "antecedent": "temp=Freezing AND time=Night AND weather=Clouds",
+        "consequent": "congestion=Low",
+        "support": 0.023265557609365373,
+        "confidence": 0.8628884826325411,
+        "lift": 3.450448426413261,
+        "hours_matching": 944,
+        "plain_language": "When freezing and night and clouds, congestion is low 86% of the time \u2014 3.45 times more often than the low level occurs overall. This pattern covers 944 hours."
+      },
+      {
+        "antecedent": "temp=Freezing AND time=Night",
+        "consequent": "congestion=Low",
+        "support": 0.07043746149106593,
+        "confidence": 0.8626622396619379,
+        "lift": 3.449543744385841,
+        "hours_matching": 2858,
+        "plain_language": "When freezing and night, congestion is low 86% of the time \u2014 3.45 times more often than the low level occurs overall. This pattern covers 2,858 hours."
+      },
+      {
+        "antecedent": "temp=Freezing AND time=Night AND weather=LowVisibility",
+        "consequent": "congestion=Low",
+        "support": 0.020036968576709797,
+        "confidence": 0.8603174603174604,
+        "lift": 3.4401676310614917,
+        "hours_matching": 813,
+        "plain_language": "When freezing and night and lowvisibility, congestion is low 86% of the time \u2014 3.44 times more often than the low level occurs overall. This pattern covers 813 hours."
+      },
+      {
+        "antecedent": "time=Night AND weather=Clouds",
+        "consequent": "congestion=Low",
+        "support": 0.058853974121996305,
+        "confidence": 0.8599207778177891,
+        "lift": 3.4385814092792737,
+        "hours_matching": 2388,
+        "plain_language": "When night and clouds, congestion is low 86% of the time \u2014 3.44 times more often than the low level occurs overall. This pattern covers 2,388 hours."
+      },
+      {
+        "antecedent": "time=Night AND weather=Clear",
+        "consequent": "congestion=Low",
+        "support": 0.08308071472581639,
+        "confidence": 0.8568886629384851,
+        "lift": 3.4264568344071185,
+        "hours_matching": 3371,
+        "plain_language": "When night and clear, congestion is low 86% of the time \u2014 3.43 times more often than the low level occurs overall. This pattern covers 3,371 hours."
+      },
+      {
+        "antecedent": "time=Night",
+        "consequent": "congestion=Low",
+        "support": 0.21424522489217498,
+        "confidence": 0.8533424953371944,
+        "lift": 3.4122767072343216,
+        "hours_matching": 8693,
+        "plain_language": "When night, congestion is low 85% of the time \u2014 3.41 times more often than the low level occurs overall. This pattern covers 8,693 hours."
+      },
+      {
+        "antecedent": "day=Weekend AND time=Evening Peak",
+        "consequent": "congestion=High",
+        "support": 0.04024645717806531,
+        "confidence": 0.8527415143603133,
+        "lift": 3.4105457806968666,
+        "hours_matching": 1633,
+        "plain_language": "When weekend and evening peak, congestion is high 85% of the time \u2014 3.41 times more often than the high level occurs overall. This pattern covers 1,633 hours."
+      },
+      {
+        "antecedent": "day=Weekday AND time=Night AND weather=Clear",
+        "consequent": "congestion=Low",
+        "support": 0.05651263093037585,
+        "confidence": 0.8464377999261721,
+        "lift": 3.384666771657084,
+        "hours_matching": 2293,
+        "plain_language": "When weekday and night and clear, congestion is low 85% of the time \u2014 3.38 times more often than the low level occurs overall. This pattern covers 2,293 hours."
+      },
+      {
+        "antecedent": "time=Night AND weather=Rain",
+        "consequent": "congestion=Low",
+        "support": 0.02227972889710413,
+        "confidence": 0.8440709617180205,
+        "lift": 3.375202451139123,
+        "hours_matching": 904,
+        "plain_language": "When night and rain, congestion is low 84% of the time \u2014 3.38 times more often than the low level occurs overall. This pattern covers 904 hours."
+      },
+      {
+        "antecedent": "day=Weekday AND time=Morning Peak AND weather=Clear",
+        "consequent": "congestion=Severe",
+        "support": 0.02895871842267406,
+        "confidence": 0.8435032304379039,
+        "lift": 3.3745951069826416,
+        "hours_matching": 1175,
+        "plain_language": "When weekday and morning peak and clear, congestion is severe 84% of the time \u2014 3.37 times more often than the severe level occurs overall. This pattern covers 1,175 hours."
+      },
+      {
+        "antecedent": "time=Night AND weather=LowVisibility",
+        "consequent": "congestion=Low",
+        "support": 0.041528034504004926,
+        "confidence": 0.8416583416583416,
+        "lift": 3.365555061869243,
+        "hours_matching": 1685,
+        "plain_language": "When night and lowvisibility, congestion is low 84% of the time \u2014 3.37 times more often than the low level occurs overall. This pattern covers 1,685 hours."
+      }
+    ]
+  }
+}
