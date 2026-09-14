@@ -1,0 +1,635 @@
+{
+  "dataset": {
+    "raw_rows": 48204,
+    "distinct_hours": 40575,
+    "duplicate_rows": 7629,
+    "zero_kelvin_rows": 10,
+    "extreme_rain_rows": 1,
+    "date_min": "2012-10-02 09:00:00",
+    "date_max": "2018-09-30 23:00:00"
+  },
+  "task2_1_descriptive": {
+    "all_rows": {
+      "count": 48204,
+      "mean": 3259.8183553232097,
+      "median": 3380.0,
+      "std_dev_sample": 1986.8606704463589,
+      "variance_sample": 3947615.3237665547,
+      "std_dev_population": 1986.8400614618868,
+      "variance_population": 3947533.4298298736,
+      "minimum": 0.0,
+      "maximum": 7280.0,
+      "range": 7280.0,
+      "q1": 1193.0,
+      "q3": 4933.0,
+      "iqr": 3740.0,
+      "coefficient_of_variation": 0.6095004242189938,
+      "skewness": -0.08937857006592763,
+      "kurtosis_excess": -1.3090768978229412
+    },
+    "hourly_deduplicated": {
+      "count": 40575,
+      "mean": 3290.650474430068,
+      "median": 3427.0,
+      "std_dev_sample": 1984.7729092722152,
+      "variance_sample": 3939323.501380893,
+      "std_dev_population": 1984.7484510450006,
+      "variance_population": 3939226.4139255295,
+      "minimum": 0.0,
+      "maximum": 7280.0,
+      "range": 7280.0,
+      "q1": 1248.5,
+      "q3": 4952.0,
+      "iqr": 3703.5,
+      "coefficient_of_variation": 0.6031551891320128,
+      "skewness": -0.10735763052564584,
+      "kurtosis_excess": -1.2966840779076785
+    }
+  },
+  "task2_2_correlation": {
+    "all_rows_as_given": {
+      "label": "all rows, temperature as given",
+      "n": 48204,
+      "pearson_r": 0.13029879817112658,
+      "pearson_p_value": 1.636465145897604e-181,
+      "r_squared": 0.01697777680483998,
+      "spearman_rho": 0.13287367834492628,
+      "spearman_p_value": 9.719743041566793e-189,
+      "direction": "positive",
+      "strength": "weak"
+    },
+    "hourly_valid_temperature": {
+      "label": "de-duplicated hours, 0 K readings removed",
+      "n": 40565,
+      "pearson_r": 0.13921750969621427,
+      "pearson_p_value": 1.1545732779786767e-174,
+      "r_squared": 0.019381515006015513,
+      "spearman_rho": 0.14009524767812323,
+      "spearman_p_value": 7.199604120837173e-177,
+      "direction": "positive",
+      "strength": "weak"
+    }
+  },
+  "task3_probability": {
+    "all_rows": {
+      "label": "all rows",
+      "n": 48204,
+      "congestion_threshold": 5500,
+      "high_temp_threshold_kelvin": 292.0,
+      "counts": {
+        "congested_hours": 7100,
+        "clear_hours": 13391,
+        "cloudy_hours": 15164,
+        "congested_and_clear": 1763,
+        "clear_not_congested": 11628,
+        "congested_and_cloudy": 2592,
+        "cloudy_not_congested": 12572
+      },
+      "p_congestion": 0.1472906812712638,
+      "p_clear_weather": 0.277798522944154,
+      "p_congestion_and_clear": 0.03657372832130114,
+      "p_clear_given_congestion": 0.2483098591549296,
+      "p_high_temp_given_congestion": 0.26295774647887327,
+      "p_congestion_given_clear": 0.13165558957508774,
+      "p_congestion_given_cloudy": 0.17093115273015036,
+      "independence": {
+        "p_a_and_b_observed": 0.03657372832130114,
+        "p_a_times_p_b_expected": 0.04091713370059525,
+        "absolute_difference": -0.004343405379294112,
+        "observed_over_expected": 0.8938487380109197,
+        "independent": false,
+        "chi_square": 35.917197721681795,
+        "chi_square_p_value": 2.0588343402265796e-09,
+        "degrees_of_freedom": 1,
+        "phi_coefficient": 0.027296670905156067
+      },
+      "odds_ratio_clear_vs_cloudy": {
+        "odds_congestion_clear": 0.15161678706570347,
+        "odds_congestion_cloudy": 0.20617244670696785,
+        "odds_ratio": 0.7353882125733118,
+        "ci95_low": 0.6887281366720795,
+        "ci95_high": 0.7852094235686158
+      },
+      "congestion_rate_by_weather": {
+        "Clouds": {
+          "hours": 15164,
+          "congested_hours": 2592,
+          "congestion_rate": 0.17093115273015036,
+          "avg_volume": 3618.449749406489
+        },
+        "Fog": {
+          "hours": 912,
+          "congested_hours": 152,
+          "congestion_rate": 0.16666666666666666,
+          "avg_volume": 2703.720394736842
+        },
+        "Drizzle": {
+          "hours": 1821,
+          "congested_hours": 281,
+          "congestion_rate": 0.1543108182317408,
+          "avg_volume": 3290.727073036793
+        },
+        "Rain": {
+          "hours": 5672,
+          "congested_hours": 862,
+          "congestion_rate": 0.15197461212976024,
+          "avg_volume": 3317.9055007052184
+        },
+        "Smoke": {
+          "hours": 20,
+          "congested_hours": 3,
+          "congestion_rate": 0.15,
+          "avg_volume": 3237.65
+        },
+        "Mist": {
+          "hours": 5950,
+          "congested_hours": 859,
+          "congestion_rate": 0.14436974789915966,
+          "avg_volume": 2932.956638655462
+        },
+        "Thunderstorm": {
+          "hours": 1034,
+          "congested_hours": 141,
+          "congestion_rate": 0.13636363636363635,
+          "avg_volume": 3001.6208897485494
+        },
+        "Clear": {
+          "hours": 13391,
+          "congested_hours": 1763,
+          "congestion_rate": 0.13165558957508774,
+          "avg_volume": 3055.908819356284
+        },
+        "Haze": {
+          "hours": 1360,
+          "congested_hours": 173,
+          "congestion_rate": 0.12720588235294117,
+          "avg_volume": 3502.1014705882353
+        },
+        "Snow": {
+          "hours": 2876,
+          "congested_hours": 274,
+          "congestion_rate": 0.0952712100139082,
+          "avg_volume": 3016.844228094576
+        },
+        "Squall": {
+          "hours": 4,
+          "congested_hours": 0,
+          "congestion_rate": 0.0,
+          "avg_volume": 2061.75
+        }
+      }
+    },
+    "hourly_deduplicated": {
+      "label": "de-duplicated hours",
+      "n": 40575,
+      "congestion_threshold": 5500,
+      "high_temp_threshold_kelvin": 292.0,
+      "counts": {
+        "congested_hours": 6107,
+        "clear_hours": 13364,
+        "cloudy_hours": 15123,
+        "congested_and_clear": 1762,
+        "clear_not_congested": 11602,
+        "congested_and_cloudy": 2586,
+        "cloudy_not_congested": 12537
+      },
+      "p_congestion": 0.1505113986444855,
+      "p_clear_weather": 0.3293653727664818,
+      "p_congestion_and_clear": 0.04342575477510782,
+      "p_clear_given_congestion": 0.2885213689209104,
+      "p_high_temp_given_congestion": 0.2782053381365646,
+      "p_congestion_given_clear": 0.13184675246932057,
+      "p_congestion_given_cloudy": 0.17099781789327514,
+      "independence": {
+        "p_a_and_b_observed": 0.04342575477510782,
+        "p_a_times_p_b_expected": 0.04957324292014552,
+        "absolute_difference": -0.006147488145037697,
+        "observed_over_expected": 0.8759918096352843,
+        "independent": false,
+        "chi_square": 54.07794799872012,
+        "chi_square_p_value": 1.9269173944370637e-13,
+        "degrees_of_freedom": 1,
+        "phi_coefficient": 0.03650739440076106
+      },
+      "odds_ratio_clear_vs_cloudy": {
+        "odds_congestion_clear": 0.15187036717807276,
+        "odds_congestion_cloudy": 0.20626944245034698,
+        "odds_ratio": 0.7362717684885917,
+        "ci95_low": 0.6895226724181306,
+        "ci95_high": 0.7861904165851533
+      },
+      "congestion_rate_by_weather": {
+        "Fog": {
+          "hours": 617,
+          "congested_hours": 124,
+          "congestion_rate": 0.20097244732576985,
+          "avg_volume": 2653.768233387358
+        },
+        "Drizzle": {
+          "hours": 370,
+          "congested_hours": 67,
+          "congestion_rate": 0.1810810810810811,
+          "avg_volume": 3153.4945945945947
+        },
+        "Mist": {
+          "hours": 1936,
+          "congested_hours": 335,
+          "congestion_rate": 0.17303719008264462,
+          "avg_volume": 2793.1978305785124
+        },
+        "Clouds": {
+          "hours": 15123,
+          "congested_hours": 2586,
+          "congestion_rate": 0.17099781789327514,
+          "avg_volume": 3616.7097798055943
+        },
+        "Rain": {
+          "hours": 4513,
+          "congested_hours": 719,
+          "congestion_rate": 0.1593175271438068,
+          "avg_volume": 3398.1482384223355
+        },
+        "Thunderstorm": {
+          "hours": 1010,
+          "congested_hours": 136,
+          "congestion_rate": 0.13465346534653466,
+          "avg_volume": 3009.9168316831683
+        },
+        "Haze": {
+          "hours": 839,
+          "congested_hours": 112,
+          "congestion_rate": 0.133492252681764,
+          "avg_volume": 3539.6805721096543
+        },
+        "Clear": {
+          "hours": 13364,
+          "congested_hours": 1762,
+          "congestion_rate": 0.13184675246932057,
+          "avg_volume": 3055.164995510326
+        },
+        "Smoke": {
+          "hours": 16,
+          "congested_hours": 2,
+          "congestion_rate": 0.125,
+          "avg_volume": 2771.6875
+        },
+        "Snow": {
+          "hours": 2786,
+          "congested_hours": 264,
+          "congestion_rate": 0.09475951184493898,
+          "avg_volume": 3011.916367552046
+        },
+        "Squall": {
+          "hours": 1,
+          "congested_hours": 0,
+          "congestion_rate": 0.0,
+          "avg_volume": 420.0
+        }
+      }
+    },
+    "hour_controlled": {
+      "per_hour": [
+        {
+          "hour": 0,
+          "n_clear": 723,
+          "n_cloudy": 484,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 1,
+          "n_clear": 688,
+          "n_cloudy": 474,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 2,
+          "n_clear": 658,
+          "n_cloudy": 457,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 3,
+          "n_clear": 622,
+          "n_cloudy": 438,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 4,
+          "n_clear": 631,
+          "n_cloudy": 464,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 5,
+          "n_clear": 612,
+          "n_cloudy": 460,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 6,
+          "n_clear": 583,
+          "n_cloudy": 456,
+          "rate_clear": 0.4734133790737564,
+          "rate_cloudy": 0.42105263157894735,
+          "rate_difference": 0.05236074749480907
+        },
+        {
+          "hour": 7,
+          "n_clear": 475,
+          "n_cloudy": 563,
+          "rate_clear": 0.6063157894736843,
+          "rate_cloudy": 0.6198934280639432,
+          "rate_difference": -0.013577638590258956
+        },
+        {
+          "hour": 8,
+          "n_clear": 473,
+          "n_cloudy": 605,
+          "rate_clear": 0.4334038054968288,
+          "rate_cloudy": 0.5190082644628099,
+          "rate_difference": -0.08560445896598112
+        },
+        {
+          "hour": 9,
+          "n_clear": 504,
+          "n_cloudy": 591,
+          "rate_clear": 0.05555555555555555,
+          "rate_cloudy": 0.043993231810490696,
+          "rate_difference": 0.011562323745064856
+        },
+        {
+          "hour": 10,
+          "n_clear": 540,
+          "n_cloudy": 645,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 11,
+          "n_clear": 499,
+          "n_cloudy": 691,
+          "rate_clear": 0.018036072144288578,
+          "rate_cloudy": 0.008683068017366137,
+          "rate_difference": 0.009353004126922441
+        },
+        {
+          "hour": 12,
+          "n_clear": 498,
+          "n_cloudy": 735,
+          "rate_clear": 0.06827309236947791,
+          "rate_cloudy": 0.055782312925170066,
+          "rate_difference": 0.012490779444307848
+        },
+        {
+          "hour": 13,
+          "n_clear": 465,
+          "n_cloudy": 787,
+          "rate_clear": 0.05806451612903226,
+          "rate_cloudy": 0.043202033036848796,
+          "rate_difference": 0.014862483092183465
+        },
+        {
+          "hour": 14,
+          "n_clear": 440,
+          "n_cloudy": 843,
+          "rate_clear": 0.19772727272727272,
+          "rate_cloudy": 0.1506524317912218,
+          "rate_difference": 0.04707484093605091
+        },
+        {
+          "hour": 15,
+          "n_clear": 455,
+          "n_cloudy": 798,
+          "rate_clear": 0.5494505494505495,
+          "rate_cloudy": 0.550125313283208,
+          "rate_difference": -0.0006747638326585204
+        },
+        {
+          "hour": 16,
+          "n_clear": 461,
+          "n_cloudy": 827,
+          "rate_clear": 0.6572668112798264,
+          "rate_cloudy": 0.6771463119709794,
+          "rate_difference": -0.019879500691152963
+        },
+        {
+          "hour": 17,
+          "n_clear": 432,
+          "n_cloudy": 817,
+          "rate_clear": 0.5833333333333334,
+          "rate_cloudy": 0.6083231334149327,
+          "rate_difference": -0.024989800081599345
+        },
+        {
+          "hour": 18,
+          "n_clear": 486,
+          "n_cloudy": 768,
+          "rate_clear": 0.006172839506172839,
+          "rate_cloudy": 0.0013020833333333333,
+          "rate_difference": 0.004870756172839506
+        },
+        {
+          "hour": 19,
+          "n_clear": 524,
+          "n_cloudy": 735,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 20,
+          "n_clear": 567,
+          "n_cloudy": 731,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 21,
+          "n_clear": 606,
+          "n_cloudy": 656,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 22,
+          "n_clear": 685,
+          "n_cloudy": 586,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        },
+        {
+          "hour": 23,
+          "n_clear": 737,
+          "n_cloudy": 512,
+          "rate_clear": 0.0,
+          "rate_cloudy": 0.0,
+          "rate_difference": 0.0
+        }
+      ],
+      "mean_rate_difference_within_hour": 0.0003270322021052992,
+      "hours_compared": 24
+    },
+    "congestion_by_hour": {
+      "0": {
+        "hours": 1723,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.4196169471851422,
+        "avg_volume": 844.8543238537435
+      },
+      "1": {
+        "hours": 1710,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.4023391812865497,
+        "avg_volume": 521.3187134502924
+      },
+      "2": {
+        "hours": 1697,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.3877430760164997,
+        "avg_volume": 392.6370064820271
+      },
+      "3": {
+        "hours": 1669,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.37267825044937086,
+        "avg_volume": 373.21030557219893
+      },
+      "4": {
+        "hours": 1703,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.3705226071638285,
+        "avg_volume": 701.3176746917205
+      },
+      "5": {
+        "hours": 1685,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.3632047477744807,
+        "avg_volume": 2103.66706231454
+      },
+      "6": {
+        "hours": 1683,
+        "congestion_rate": 0.4355317884729649,
+        "clear_rate": 0.3464052287581699,
+        "avg_volume": 4172.058229352347
+      },
+      "7": {
+        "hours": 1672,
+        "congestion_rate": 0.6208133971291866,
+        "clear_rate": 0.2840909090909091,
+        "avg_volume": 4769.831339712919
+      },
+      "8": {
+        "hours": 1689,
+        "congestion_rate": 0.4837181764357608,
+        "clear_rate": 0.28004736530491414,
+        "avg_volume": 4593.599763173475
+      },
+      "9": {
+        "hours": 1639,
+        "congestion_rate": 0.04697986577181208,
+        "clear_rate": 0.3075045759609518,
+        "avg_volume": 4394.778523489933
+      },
+      "10": {
+        "hours": 1705,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.31671554252199413,
+        "avg_volume": 4204.876832844575
+      },
+      "11": {
+        "hours": 1667,
+        "congestion_rate": 0.011397720455908818,
+        "clear_rate": 0.29934013197360526,
+        "avg_volume": 4498.458908218357
+      },
+      "12": {
+        "hours": 1692,
+        "congestion_rate": 0.053782505910165486,
+        "clear_rate": 0.29432624113475175,
+        "avg_volume": 4739.118794326241
+      },
+      "13": {
+        "hours": 1673,
+        "congestion_rate": 0.041243275552898986,
+        "clear_rate": 0.2779438135086671,
+        "avg_volume": 4741.578003586372
+      },
+      "14": {
+        "hours": 1697,
+        "congestion_rate": 0.15792575132586917,
+        "clear_rate": 0.2592810842663524,
+        "avg_volume": 4957.022981732469
+      },
+      "15": {
+        "hours": 1663,
+        "congestion_rate": 0.5405892964521948,
+        "clear_rate": 0.2736019242333133,
+        "avg_volume": 5271.737823211064
+      },
+      "16": {
+        "hours": 1707,
+        "congestion_rate": 0.6549502050380785,
+        "clear_rate": 0.27006444053895723,
+        "avg_volume": 5708.6145284124195
+      },
+      "17": {
+        "hours": 1664,
+        "congestion_rate": 0.5847355769230769,
+        "clear_rate": 0.25961538461538464,
+        "avg_volume": 5350.830528846154
+      },
+      "18": {
+        "hours": 1682,
+        "congestion_rate": 0.002972651605231867,
+        "clear_rate": 0.28894173602853745,
+        "avg_volume": 4306.4673008323425
+      },
+      "19": {
+        "hours": 1683,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.3113487819370172,
+        "avg_volume": 3311.0213903743315
+      },
+      "20": {
+        "hours": 1709,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.3317729666471621,
+        "avg_volume": 2869.703920421299
+      },
+      "21": {
+        "hours": 1704,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.35563380281690143,
+        "avg_volume": 2699.3609154929577
+      },
+      "22": {
+        "hours": 1719,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.39848749272833045,
+        "avg_volume": 2224.418848167539
+      },
+      "23": {
+        "hours": 1740,
+        "congestion_rate": 0.0,
+        "clear_rate": 0.4235632183908046,
+        "avg_volume": 1490.7103448275861
+      }
+    }
+  }
+}
