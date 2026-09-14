@@ -1,0 +1,202 @@
+{
+  "feature_count": 44,
+  "features": [
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "month",
+    "day_of_year",
+    "is_morning_rush",
+    "is_evening_rush",
+    "is_rush_hour",
+    "hour_sin",
+    "hour_cos",
+    "day_of_week_sin",
+    "day_of_week_cos",
+    "month_sin",
+    "month_cos",
+    "day_of_year_sin",
+    "day_of_year_cos",
+    "temp",
+    "rain_1h",
+    "snow_1h",
+    "clouds_all",
+    "weather_severity",
+    "total_precipitation",
+    "adverse_conditions_score",
+    "is_severe_weather",
+    "is_low_visibility",
+    "is_precipitating",
+    "is_raining",
+    "is_snowing",
+    "is_freezing",
+    "is_extreme_cold",
+    "is_hot",
+    "is_overcast",
+    "is_holiday",
+    "weather_Clear",
+    "weather_Clouds",
+    "weather_Drizzle",
+    "weather_Fog",
+    "weather_Haze",
+    "weather_Mist",
+    "weather_Rain",
+    "weather_Smoke",
+    "weather_Snow",
+    "weather_Squall",
+    "weather_Thunderstorm"
+  ],
+  "excluded_for_leakage": [
+    "traffic_volume",
+    "congestion_category",
+    "congestion_level",
+    "is_congested",
+    "high_risk"
+  ],
+  "excluded_by_design": [
+    "year",
+    "week_of_year",
+    "quarter",
+    "temp_celsius"
+  ],
+  "split": {
+    "method": "chronological",
+    "test_fraction": 0.2,
+    "train_rows": 32460,
+    "test_rows": 8115,
+    "train_end": "2017-10-26 17:00:00",
+    "test_start": "2017-10-26 18:00:00"
+  },
+  "classification": {
+    "baseline_majority_class": {
+      "accuracy": 0.8404189772027111
+    },
+    "models": {
+      "logistic_regression": {
+        "metrics": {
+          "accuracy": 0.963154651879236,
+          "precision": 0.8180076628352491,
+          "recall": 0.9891891891891892,
+          "f1": 0.8954910870325061,
+          "roc_auc": 0.9930336620659201,
+          "average_precision": 0.9451566318627872,
+          "true_negatives": 6535,
+          "false_positives": 285,
+          "false_negatives": 14,
+          "true_positives": 1281,
+          "positive_rate_actual": 0.15958102279728897,
+          "positive_rate_predicted": 0.19297597042513864,
+          "training_seconds": 0.7190053462982178,
+          "roc_auc_random_split": 0.9959834231063411,
+          "optimism_from_random_split": 0.002949761040420995
+        },
+        "model_path": "part3_machine_learning/models/classifier_logistic_regression.joblib"
+      },
+      "random_forest": {
+        "metrics": {
+          "accuracy": 0.9828712261244609,
+          "precision": 0.9164265129682997,
+          "recall": 0.9822393822393822,
+          "f1": 0.9481923220275811,
+          "roc_auc": 0.9963120053442635,
+          "average_precision": 0.9748393578207223,
+          "true_negatives": 6704,
+          "false_positives": 116,
+          "false_negatives": 23,
+          "true_positives": 1272,
+          "positive_rate_actual": 0.15958102279728897,
+          "positive_rate_predicted": 0.17104128157732593,
+          "training_seconds": 2.040660858154297,
+          "roc_auc_random_split": 0.9990175506398472,
+          "optimism_from_random_split": 0.0027055452955837556
+        },
+        "model_path": "part3_machine_learning/models/classifier_random_forest.joblib",
+        "top_features": {
+          "weather_severity": 0.20494,
+          "adverse_conditions_score": 0.17309,
+          "hour_cos": 0.13851,
+          "is_severe_weather": 0.08993,
+          "hour": 0.07669,
+          "weather_Clouds": 0.06364,
+          "weather_Clear": 0.04509,
+          "is_low_visibility": 0.0409,
+          "clouds_all": 0.02762,
+          "weather_Rain": 0.02163,
+          "hour_sin": 0.02044,
+          "is_rush_hour": 0.01195,
+          "is_overcast": 0.00793,
+          "day_of_week": 0.00628,
+          "weather_Mist": 0.00551
+        }
+      }
+    },
+    "best_model": "random_forest"
+  },
+  "regression": {
+    "baseline_mean_prediction": {
+      "mae": 1723.970504007207,
+      "rmse": 1970.2045655929626,
+      "r2": -0.00014233531324836513,
+      "mean_actual": 3309.5624152803452,
+      "mean_predicted": 3286.058687615528,
+      "mae_as_pct_of_mean": 52.090587445868536
+    },
+    "models": {
+      "linear_regression": {
+        "metrics": {
+          "mae": 645.0337399883986,
+          "rmse": 861.5573330453194,
+          "r2": 0.8087473175102724,
+          "mean_actual": 3309.5624152803452,
+          "mean_predicted": 3289.336132971173,
+          "mae_as_pct_of_mean": 19.490000762948576,
+          "training_seconds": 0.06702685356140137,
+          "improvement_over_baseline_mae": 1078.9367640188084
+        },
+        "model_path": "part3_machine_learning/models/regressor_linear_regression.joblib"
+      },
+      "hist_gradient_boosting": {
+        "metrics": {
+          "mae": 225.7681181238245,
+          "rmse": 372.48993413747604,
+          "r2": 0.9642506416513584,
+          "mean_actual": 3309.5624152803452,
+          "mean_predicted": 3317.0333930281167,
+          "mae_as_pct_of_mean": 6.821690900327082,
+          "training_seconds": 2.659745931625366,
+          "improvement_over_baseline_mae": 1498.2023858833825
+        },
+        "model_path": "part3_machine_learning/models/regressor_hist_gradient_boosting.joblib"
+      }
+    },
+    "best_model": "hist_gradient_boosting",
+    "mae_by_hour": {
+      "0": 112.80512737515384,
+      "1": 86.63888210272408,
+      "2": 69.60616950299361,
+      "3": 52.81158206982588,
+      "4": 67.27394640099222,
+      "5": 197.27277089679262,
+      "6": 226.05286964290448,
+      "7": 320.1354264220965,
+      "8": 303.12568253734736,
+      "9": 250.71829292535924,
+      "10": 219.34123051031918,
+      "11": 226.00687132132336,
+      "12": 241.55796693902053,
+      "13": 245.4730645871274,
+      "14": 253.62302925204915,
+      "15": 276.6267636993744,
+      "16": 368.99037921950213,
+      "17": 343.3031827199345,
+      "18": 281.07201856372234,
+      "19": 211.04528741145444,
+      "20": 190.6984904664909,
+      "21": 268.40019028092536,
+      "22": 330.17971243572885,
+      "23": 268.34752646124565
+    },
+    "mae_weekday": 208.36091504281265,
+    "mae_weekend": 268.7282026506807
+  }
+}
