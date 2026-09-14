@@ -1,0 +1,405 @@
+{
+  "task_4_1_data_quality": {
+    "rows": 48204,
+    "columns": 9,
+    "column_names": [
+      "holiday",
+      "temp",
+      "rain_1h",
+      "snow_1h",
+      "clouds_all",
+      "weather_main",
+      "weather_description",
+      "date_time",
+      "traffic_volume"
+    ],
+    "dtypes_as_loaded": {
+      "holiday": "str",
+      "temp": "float64",
+      "rain_1h": "float64",
+      "snow_1h": "float64",
+      "clouds_all": "int64",
+      "weather_main": "str",
+      "weather_description": "str",
+      "date_time": "str",
+      "traffic_volume": "int64"
+    },
+    "missing_values_per_column": {
+      "holiday": 0,
+      "temp": 0,
+      "rain_1h": 0,
+      "snow_1h": 0,
+      "clouds_all": 0,
+      "weather_main": 0,
+      "weather_description": 0,
+      "date_time": 0,
+      "traffic_volume": 0
+    },
+    "total_missing_values": 0,
+    "blank_string_values": {
+      "holiday": 0,
+      "weather_main": 0,
+      "weather_description": 0,
+      "date_time": 0
+    },
+    "holiday_sentinel_none_rows": 48143,
+    "holiday_named_rows": 61,
+    "duplicate_full_rows": 17,
+    "duplicate_timestamp_rows": 7629,
+    "impossible_temp_zero_kelvin": 10,
+    "impossible_rain_over_9000mm": 1,
+    "zero_traffic_volume_rows": 2
+  },
+  "prepared_table": {
+    "rows": 40575,
+    "columns": 19,
+    "column_names": [
+      "holiday",
+      "temp",
+      "rain_1h",
+      "snow_1h",
+      "clouds_all",
+      "weather_main",
+      "weather_description",
+      "date_time",
+      "traffic_volume",
+      "Date",
+      "Year",
+      "Month",
+      "MonthName",
+      "Hour",
+      "DayOfWeek",
+      "IsWeekend",
+      "TempCelsius",
+      "TrafficCategory",
+      "IsHoliday"
+    ]
+  },
+  "task_4_2_and_4_3": {
+    "A_daily_trends_2015_2017": {
+      "2015": {
+        "days": 195,
+        "mean_of_daily_averages": 3263.7308625063606,
+        "min_daily_average": 1573.6315789473683,
+        "max_daily_average": 4681.0,
+        "lowest_day": "2015-12-25",
+        "highest_day": "2015-06-19"
+      },
+      "2016": {
+        "days": 366,
+        "mean_of_daily_averages": 3199.2834916956363,
+        "min_daily_average": 277.25,
+        "max_daily_average": 4057.3846153846152,
+        "lowest_day": "2016-07-23",
+        "highest_day": "2016-04-27"
+      },
+      "2017": {
+        "days": 365,
+        "mean_of_daily_averages": 3377.2137790216157,
+        "min_daily_average": 1889.7916666666667,
+        "max_daily_average": 4055.5,
+        "lowest_day": "2017-12-25",
+        "highest_day": "2017-08-31"
+      }
+    },
+    "B_hourly_2017": {
+      "hours_of_data": 8713,
+      "by_hour": {
+        "0": 920.0934065934066,
+        "1": 554.2109589041096,
+        "2": 408.7103064066852,
+        "3": 385.80716253443524,
+        "4": 728.1270718232045,
+        "5": 2161.779005524862,
+        "6": 4222.2790055248615,
+        "7": 4819.53591160221,
+        "8": 4683.515235457064,
+        "9": 4475.681440443213,
+        "10": 4278.203856749311,
+        "11": 4575.035714285715,
+        "12": 4807.173076923077,
+        "13": 4810.7032967032965,
+        "14": 5001.030136986301,
+        "15": 5333.35261707989,
+        "16": 5834.36914600551,
+        "17": 5484.413223140496,
+        "18": 4416.271978021978,
+        "19": 3421.4835164835163,
+        "20": 2974.9505494505493,
+        "21": 2796.565934065934,
+        "22": 2348.5576923076924,
+        "23": 1577.2258953168043
+      },
+      "peak_hour": 16,
+      "peak_hour_average": 5834.36914600551,
+      "quietest_hour": 3,
+      "quietest_hour_average": 385.80716253443524,
+      "morning_peak_hour": 7,
+      "morning_peak_average": 4819.53591160221,
+      "evening_peak_hour": 16,
+      "evening_peak_average": 5834.36914600551
+    },
+    "C_weather_impact": {
+      "table": {
+        "Clouds": {
+          "hours": 15123,
+          "avg_traffic": 3616.7097798055943
+        },
+        "Haze": {
+          "hours": 839,
+          "avg_traffic": 3539.6805721096543
+        },
+        "Rain": {
+          "hours": 4513,
+          "avg_traffic": 3398.1482384223355
+        },
+        "Drizzle": {
+          "hours": 370,
+          "avg_traffic": 3153.4945945945947
+        },
+        "Clear": {
+          "hours": 13364,
+          "avg_traffic": 3055.164995510326
+        },
+        "Snow": {
+          "hours": 2786,
+          "avg_traffic": 3011.916367552046
+        },
+        "Thunderstorm": {
+          "hours": 1010,
+          "avg_traffic": 3009.9168316831683
+        },
+        "Mist": {
+          "hours": 1936,
+          "avg_traffic": 2793.1978305785124
+        },
+        "Smoke": {
+          "hours": 16,
+          "avg_traffic": 2771.6875
+        },
+        "Fog": {
+          "hours": 617,
+          "avg_traffic": 2653.768233387358
+        },
+        "Squall": {
+          "hours": 1,
+          "avg_traffic": 420.0
+        }
+      },
+      "highest_avg_weather": "Clouds",
+      "highest_avg_value": 3616.7097798055943,
+      "highest_avg_hours": 15123,
+      "lowest_avg_weather": "Squall",
+      "lowest_avg_value": 420.0,
+      "lowest_avg_hours": 1,
+      "difference_highest_minus_lowest": 3196.7097798055943,
+      "reliable_only_min_100_hours": {
+        "highest_weather": "Clouds",
+        "highest_value": 3616.7097798055943,
+        "lowest_weather": "Fog",
+        "lowest_value": 2653.768233387358,
+        "difference": 962.9415464182362
+      }
+    },
+    "D_temperature_vs_traffic": {
+      "pearson_r_celsius_vs_volume": 0.13916354904841255,
+      "avg_traffic_by_temp_band": {
+        "(-30, -25]": {
+          "hours": 125,
+          "avg_traffic": 2081.08
+        },
+        "(-25, -20]": {
+          "hours": 705,
+          "avg_traffic": 2563.1248226950356
+        },
+        "(-20, -15]": {
+          "hours": 1361,
+          "avg_traffic": 3019.3247612049963
+        },
+        "(-15, -10]": {
+          "hours": 1846,
+          "avg_traffic": 2984.094257854821
+        },
+        "(-10, -5]": {
+          "hours": 2792,
+          "avg_traffic": 3055.691260744986
+        },
+        "(-5, 0]": {
+          "hours": 4679,
+          "avg_traffic": 3051.145543919641
+        },
+        "(0, 5]": {
+          "hours": 5250,
+          "avg_traffic": 3310.8053333333332
+        },
+        "(5, 10]": {
+          "hours": 3734,
+          "avg_traffic": 3258.6162292447775
+        },
+        "(10, 15]": {
+          "hours": 4691,
+          "avg_traffic": 3180.3551481560435
+        },
+        "(15, 20]": {
+          "hours": 6333,
+          "avg_traffic": 3079.6491394283908
+        },
+        "(20, 25]": {
+          "hours": 5792,
+          "avg_traffic": 3534.3636049723755
+        },
+        "(25, 30]": {
+          "hours": 2871,
+          "avg_traffic": 4418.528735632184
+        },
+        "(30, 35]": {
+          "hours": 389,
+          "avg_traffic": 4784.7043701799485
+        },
+        "(35, 40]": {
+          "hours": 7,
+          "avg_traffic": 5074.428571428572
+        }
+      },
+      "highest_traffic_temp_band": "(30, 35]",
+      "highest_traffic_temp_band_value": 4784.7043701799485,
+      "outlier_count_z_gt_4_within_hour": 102,
+      "outlier_examples": [
+        {
+          "date_time": "2012-12-09 12:00:00",
+          "Hour": 12,
+          "temp": 269.71,
+          "TempCelsius": -3.44,
+          "weather_main": "Clear",
+          "traffic_volume": 1824
+        },
+        {
+          "date_time": "2012-12-09 13:00:00",
+          "Hour": 13,
+          "temp": 273.62,
+          "TempCelsius": 0.47,
+          "weather_main": "Clouds",
+          "traffic_volume": 1686
+        },
+        {
+          "date_time": "2012-12-09 14:00:00",
+          "Hour": 14,
+          "temp": 273.62,
+          "TempCelsius": 0.47,
+          "weather_main": "Clouds",
+          "traffic_volume": 1715
+        },
+        {
+          "date_time": "2012-12-09 15:00:00",
+          "Hour": 15,
+          "temp": 273.02,
+          "TempCelsius": -0.13,
+          "weather_main": "Mist",
+          "traffic_volume": 1989
+        },
+        {
+          "date_time": "2012-12-09 18:00:00",
+          "Hour": 18,
+          "temp": 271.87,
+          "TempCelsius": -1.28,
+          "weather_main": "Mist",
+          "traffic_volume": 1338
+        },
+        {
+          "date_time": "2012-12-09 19:00:00",
+          "Hour": 19,
+          "temp": 271.92,
+          "TempCelsius": -1.23,
+          "weather_main": "Clouds",
+          "traffic_volume": 1261
+        },
+        {
+          "date_time": "2012-12-09 20:00:00",
+          "Hour": 20,
+          "temp": 272.14,
+          "TempCelsius": -1.01,
+          "weather_main": "Clouds",
+          "traffic_volume": 1031
+        },
+        {
+          "date_time": "2013-01-01 01:00:00",
+          "Hour": 1,
+          "temp": 263.78,
+          "TempCelsius": -9.37,
+          "weather_main": "Clouds",
+          "traffic_volume": 1502
+        },
+        {
+          "date_time": "2013-01-01 10:00:00",
+          "Hour": 10,
+          "temp": 260.19,
+          "TempCelsius": -12.96,
+          "weather_main": "Clear",
+          "traffic_volume": 1747
+        },
+        {
+          "date_time": "2013-02-10 13:00:00",
+          "Hour": 13,
+          "temp": 271.94,
+          "TempCelsius": -1.21,
+          "weather_main": "Haze",
+          "traffic_volume": 2059
+        },
+        {
+          "date_time": "2013-02-10 14:00:00",
+          "Hour": 14,
+          "temp": 272.32,
+          "TempCelsius": -0.83,
+          "weather_main": "Haze",
+          "traffic_volume": 2212
+        },
+        {
+          "date_time": "2013-02-10 19:00:00",
+          "Hour": 19,
+          "temp": 271.98,
+          "TempCelsius": -1.17,
+          "weather_main": "Mist",
+          "traffic_volume": 1539
+        }
+      ],
+      "zero_volume_hours": 2
+    },
+    "KPI_cards": {
+      "total_hours_analysed": 40575,
+      "average_traffic_volume": 3290.650474430068,
+      "average_temperature_kelvin": 281.3852160197166,
+      "average_temperature_celsius": 8.235220948860135,
+      "total_vehicles_recorded": 133518143,
+      "pct_hours_high_category": 0.1505113986444855
+    },
+    "slicer_domains": {
+      "hour_range": [
+        0,
+        23
+      ],
+      "weather_conditions": [
+        "Clear",
+        "Clouds",
+        "Drizzle",
+        "Fog",
+        "Haze",
+        "Mist",
+        "Rain",
+        "Smoke",
+        "Snow",
+        "Squall",
+        "Thunderstorm"
+      ],
+      "traffic_categories": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "traffic_category_distribution": {
+      "Low": 26060,
+      "Medium": 8408,
+      "High": 6107
+    }
+  }
+}
