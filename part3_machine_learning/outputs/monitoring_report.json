@@ -1,0 +1,1190 @@
+{
+  "overall_status": "ALERT",
+  "policy": {
+    "error_alert_ratio": 1.4,
+    "psi_warn": 0.1,
+    "psi_alert": 0.25,
+    "min_window_hours": 300,
+    "monitored_features": [
+      "temp",
+      "clouds_all",
+      "rain_1h",
+      "weather_severity",
+      "hour",
+      "is_weekend",
+      "adverse_conditions_score"
+    ],
+    "psi_alert_thresholds_calibrated": {
+      "temp": 1.7817,
+      "clouds_all": 3.2466,
+      "rain_1h": 1.1632,
+      "weather_severity": 1.9825,
+      "hour": 0.25,
+      "is_weekend": 0.25,
+      "adverse_conditions_score": 1.3721
+    },
+    "psi_calibration_history": {
+      "temp": {
+        "n_months": 50,
+        "median_psi": 0.16464844383282404,
+        "p95_psi": 1.7817301246186754
+      },
+      "clouds_all": {
+        "n_months": 50,
+        "median_psi": 0.8285877373202082,
+        "p95_psi": 3.246550429119393
+      },
+      "rain_1h": {
+        "n_months": 50,
+        "median_psi": 0.0,
+        "p95_psi": 1.1632273260936832
+      },
+      "weather_severity": {
+        "n_months": 50,
+        "median_psi": 0.2455689821036801,
+        "p95_psi": 1.9825296752075412
+      },
+      "hour": {
+        "n_months": 50,
+        "median_psi": 0.0017692795779162026,
+        "p95_psi": 0.018264818138616443
+      },
+      "is_weekend": {
+        "n_months": 50,
+        "median_psi": 0.002506950585033643,
+        "p95_psi": 0.013648840731212806
+      },
+      "adverse_conditions_score": {
+        "n_months": 50,
+        "median_psi": 0.34470148620299684,
+        "p95_psi": 1.3720719135357498
+      }
+    }
+  },
+  "baseline_mae": 241.09,
+  "baseline_mae_by_calendar_month": {
+    "1": 293.87,
+    "2": 224.48,
+    "3": 215.65,
+    "4": 193.72,
+    "5": 189.22,
+    "6": 219.29,
+    "7": 308.0,
+    "8": 189.04,
+    "9": 230.77,
+    "10": 214.78,
+    "11": 320.49,
+    "12": 292.84
+  },
+  "model": "regressor_hist_gradient_boosting.joblib",
+  "windows_evaluated": 11,
+  "windows_alert": 2,
+  "windows_pass": 9,
+  "real_data_windows": [
+    {
+      "window": "2017-11",
+      "hours": 716,
+      "mae": 222.9,
+      "baseline_mae": 320.49,
+      "error_ratio": 0.6955,
+      "mean_bias": -123.24,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.3576,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.2107,
+          "ks_p_value": 6.643110640650584e-22,
+          "reference_mean": 276.1154300083822,
+          "current_mean": 273.8342318435754,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 1.8333,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1028,
+          "ks_p_value": 1.5711742380943628e-05,
+          "reference_mean": 49.52975691533948,
+          "current_mean": 45.45670391061452,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0214,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.0034,
+          "ks_p_value": 1.0,
+          "reference_mean": 0.0022757753562447614,
+          "current_mean": 0.0,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.1336,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.0975,
+          "ks_p_value": 5.108031225840231e-05,
+          "reference_mean": 1.7824811399832354,
+          "current_mean": 1.6592178770949721,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0006,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.009,
+          "ks_p_value": 0.9999999999193193,
+          "reference_mean": 11.470662196144174,
+          "current_mean": 11.553072625698324,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0005,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0103,
+          "ks_p_value": 0.9999999763830975,
+          "reference_mean": 0.27703269069572506,
+          "current_mean": 0.26675977653631283,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.1377,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1099,
+          "ks_p_value": 2.98563841549824e-06,
+          "reference_mean": 2.770746018440905,
+          "current_mean": 2.8910614525139664,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    },
+    {
+      "window": "2017-12",
+      "hours": 740,
+      "mae": 289.81,
+      "baseline_mae": 292.84,
+      "error_ratio": 0.9896,
+      "mean_bias": -86.39,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.3383,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.1547,
+          "ks_p_value": 1.7116007534104246e-12,
+          "reference_mean": 266.6190415864459,
+          "current_mean": 265.7928108108108,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 2.389,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1643,
+          "ks_p_value": 4.8147060990287993e-14,
+          "reference_mean": 61.42587601078167,
+          "current_mean": 52.9527027027027,
+          "status": "WARN"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.0273,
+          "ks_p_value": 0.7696801043541764,
+          "reference_mean": 0.03932614555256065,
+          "current_mean": 0.0,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.1501,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.1215,
+          "ks_p_value": 7.162254148663043e-08,
+          "reference_mean": 3.3373122834039277,
+          "current_mean": 2.824324324324324,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0005,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0077,
+          "ks_p_value": 0.9999999999999463,
+          "reference_mean": 11.416634578359647,
+          "current_mean": 11.494594594594595,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0031,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0257,
+          "ks_p_value": 0.8295216070326027,
+          "reference_mean": 0.2972660762418175,
+          "current_mean": 0.32297297297297295,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.1069,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1192,
+          "ks_p_value": 1.36597716794939e-07,
+          "reference_mean": 5.761262995764343,
+          "current_mean": 5.262162162162162,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": [
+        "clouds_all"
+      ]
+    },
+    {
+      "window": "2018-01",
+      "hours": 742,
+      "mae": 317.22,
+      "baseline_mae": 293.87,
+      "error_ratio": 1.0795,
+      "mean_bias": 1.67,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.0433,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.0439,
+          "ks_p_value": 0.2120804455529789,
+          "reference_mean": 264.29664106645447,
+          "current_mean": 264.2366846361186,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 2.1091,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1781,
+          "ks_p_value": 2.3515786815042804e-16,
+          "reference_mean": 52.70115399920414,
+          "current_mean": 41.711590296495956,
+          "status": "WARN"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.0223,
+          "ks_p_value": 0.9311523061176815,
+          "reference_mean": 0.014269797055312375,
+          "current_mean": 0.0,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.4254,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.1565,
+          "ks_p_value": 1.0262879750172443e-12,
+          "reference_mean": 2.455232789494628,
+          "current_mean": 2.1590296495956873,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0009,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0119,
+          "ks_p_value": 0.9999951982471533,
+          "reference_mean": 11.376044568245126,
+          "current_mean": 11.525606469002696,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0018,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0186,
+          "ks_p_value": 0.9863887844796868,
+          "reference_mean": 0.27735773975328293,
+          "current_mean": 0.2587601078167116,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.2254,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1979,
+          "ks_p_value": 4.121437277855084e-20,
+          "reference_mean": 4.7855153203342615,
+          "current_mean": 4.401617250673854,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": [
+        "clouds_all"
+      ]
+    },
+    {
+      "window": "2018-02",
+      "hours": 672,
+      "mae": 237.61,
+      "baseline_mae": 224.48,
+      "error_ratio": 1.0585,
+      "mean_bias": 20.46,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.1301,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.1672,
+          "ks_p_value": 2.5271904321126123e-13,
+          "reference_mean": 266.1961912006579,
+          "current_mean": 263.7802827380952,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.7727,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.163,
+          "ks_p_value": 1.1114409737412134e-12,
+          "reference_mean": 48.3671875,
+          "current_mean": 37.14732142857143,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0429,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.0062,
+          "ks_p_value": 1.0,
+          "reference_mean": 0.003194901315789474,
+          "current_mean": 0.0,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.4042,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.0978,
+          "ks_p_value": 7.757147790890399e-05,
+          "reference_mean": 1.700657894736842,
+          "current_mean": 2.236607142857143,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0005,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0053,
+          "ks_p_value": 1.0,
+          "reference_mean": 11.498766447368421,
+          "current_mean": 11.5,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0029,
+          "ks_p_value": 1.0,
+          "reference_mean": 0.2886513157894737,
+          "current_mean": 0.2857142857142857,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.1893,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1186,
+          "ks_p_value": 6.530134390763654e-07,
+          "reference_mean": 3.6706414473684212,
+          "current_mean": 4.614583333333333,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    },
+    {
+      "window": "2018-03",
+      "hours": 733,
+      "mae": 212.07,
+      "baseline_mae": 215.65,
+      "error_ratio": 0.9834,
+      "mean_bias": 36.13,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.5346,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.1333,
+          "ks_p_value": 2.737367295252606e-09,
+          "reference_mean": 272.3498395931142,
+          "current_mean": 272.7966575716235,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.0259,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.0947,
+          "ks_p_value": 6.746821530376766e-05,
+          "reference_mean": 51.56494522691706,
+          "current_mean": 45.42837653478854,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.0387,
+          "ks_p_value": 0.3492232181168704,
+          "reference_mean": 0.01777777777777778,
+          "current_mean": 0.0,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.2687,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.0645,
+          "ks_p_value": 0.016484294584155935,
+          "reference_mean": 1.8943661971830985,
+          "current_mean": 1.9740791268758526,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0018,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0147,
+          "ks_p_value": 0.9995172223266249,
+          "reference_mean": 11.44679186228482,
+          "current_mean": 11.619372442019099,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0005,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0104,
+          "ks_p_value": 0.9999999223037983,
+          "reference_mean": 0.2942097026604069,
+          "current_mean": 0.2837653478854025,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.2445,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1284,
+          "ks_p_value": 1.2141927983241894e-08,
+          "reference_mean": 3.257042253521127,
+          "current_mean": 3.417462482946794,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    },
+    {
+      "window": "2018-04",
+      "hours": 720,
+      "mae": 307.02,
+      "baseline_mae": 193.72,
+      "error_ratio": 1.5849,
+      "mean_bias": 98.85,
+      "status": "ALERT",
+      "reasons": [
+        "MAE 307 is 1.58x the baseline 194",
+        "significant feature drift in: rain_1h"
+      ],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.5782,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.2996,
+          "ks_p_value": 1.407393769178173e-45,
+          "reference_mean": 279.91679606970706,
+          "current_mean": 275.6538638888889,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.1997,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.199,
+          "ks_p_value": 3.4753082433796777e-20,
+          "reference_mean": 54.13422321097516,
+          "current_mean": 37.859722222222224,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 1.1632,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.1001,
+          "ks_p_value": 2.0533242179886786e-05,
+          "reference_mean": 0.10268446421950315,
+          "current_mean": 0.0,
+          "status": "ALERT"
+        },
+        "weather_severity": {
+          "psi": 0.5755,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.1547,
+          "ks_p_value": 2.436396848603804e-12,
+          "reference_mean": 2.4590285502410087,
+          "current_mean": 2.459722222222222,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0005,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.009,
+          "ks_p_value": 0.9999999998431924,
+          "reference_mean": 11.400444938820913,
+          "current_mean": 11.5,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0001,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0041,
+          "ks_p_value": 1.0,
+          "reference_mean": 0.29588431590656283,
+          "current_mean": 0.3,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.2614,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1645,
+          "ks_p_value": 6.674110018312355e-14,
+          "reference_mean": 3.0374490174267703,
+          "current_mean": 3.8319444444444444,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [
+        "rain_1h"
+      ],
+      "features_warn": []
+    },
+    {
+      "window": "2018-05",
+      "hours": 743,
+      "mae": 186.17,
+      "baseline_mae": 189.22,
+      "error_ratio": 0.9839,
+      "mean_bias": 43.42,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.5384,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.2587,
+          "ks_p_value": 3.0182782517728176e-35,
+          "reference_mean": 287.65338150087257,
+          "current_mean": 291.9896917900404,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.1662,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1608,
+          "ks_p_value": 8.609742200253803e-14,
+          "reference_mean": 47.7347294938918,
+          "current_mean": 36.703903095558545,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.0709,
+          "ks_p_value": 0.005041626537570232,
+          "reference_mean": 0.09325305410122164,
+          "current_mean": 0.0,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.1799,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.0873,
+          "ks_p_value": 0.0002275532741668566,
+          "reference_mean": 2.1287958115183248,
+          "current_mean": 1.9663526244952894,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0001,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0031,
+          "ks_p_value": 1.0,
+          "reference_mean": 11.521465968586387,
+          "current_mean": 11.51278600269179,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0013,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0159,
+          "ks_p_value": 0.9977781762366746,
+          "reference_mean": 0.2729493891797557,
+          "current_mean": 0.2570659488559892,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.3492,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.0877,
+          "ks_p_value": 0.0002116289997308274,
+          "reference_mean": 2.345549738219895,
+          "current_mean": 2.1413189771197847,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    },
+    {
+      "window": "2018-06",
+      "hours": 719,
+      "mae": 168.75,
+      "baseline_mae": 219.29,
+      "error_ratio": 0.7695,
+      "mean_bias": 20.33,
+      "status": "ALERT",
+      "reasons": [
+        "significant feature drift in: rain_1h"
+      ],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.2599,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.1792,
+          "ks_p_value": 3.296338406582216e-16,
+          "reference_mean": 293.2651669285153,
+          "current_mean": 294.9723087621697,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 2.8733,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1804,
+          "ks_p_value": 2.0045206364594748e-16,
+          "reference_mean": 37.02985074626866,
+          "current_mean": 46.05006954102921,
+          "status": "WARN"
+        },
+        "rain_1h": {
+          "psi": 1.4263,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.1206,
+          "ks_p_value": 1.4544538843990658e-07,
+          "reference_mean": 0.20505498821681065,
+          "current_mean": 0.0,
+          "status": "ALERT"
+        },
+        "weather_severity": {
+          "psi": 0.0581,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.0659,
+          "ks_p_value": 0.014499662423298683,
+          "reference_mean": 2.184996072270228,
+          "current_mean": 2.553546592489569,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0009,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0105,
+          "ks_p_value": 0.9999999391861107,
+          "reference_mean": 11.582875098193245,
+          "current_mean": 11.513212795549373,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0029,
+          "ks_p_value": 1.0,
+          "reference_mean": 0.29615082482325217,
+          "current_mean": 0.29902642559109877,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.6505,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.0748,
+          "ks_p_value": 0.003554669299360769,
+          "reference_mean": 2.408483896307934,
+          "current_mean": 2.7037552155771905,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [
+        "rain_1h"
+      ],
+      "features_warn": [
+        "clouds_all"
+      ]
+    },
+    {
+      "window": "2018-07",
+      "hours": 744,
+      "mae": 172.74,
+      "baseline_mae": 308.0,
+      "error_ratio": 0.5608,
+      "mean_bias": 37.53,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.0225,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.0359,
+          "ks_p_value": 0.39430553193273404,
+          "reference_mean": 295.4329909502262,
+          "current_mean": 295.669247311828,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.7652,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.0968,
+          "ks_p_value": 1.8199224950575697e-05,
+          "reference_mean": 33.43410633484163,
+          "current_mean": 30.697580645161292,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.0464,
+          "ks_p_value": 0.1370610648107716,
+          "reference_mean": 0.14989536199095024,
+          "current_mean": 0.0,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.0822,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.073,
+          "ks_p_value": 0.0026972063570542396,
+          "reference_mean": 1.6580882352941178,
+          "current_mean": 1.9865591397849462,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0001,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.004,
+          "ks_p_value": 1.0,
+          "reference_mean": 11.544400452488688,
+          "current_mean": 11.5,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0001,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0032,
+          "ks_p_value": 1.0,
+          "reference_mean": 0.29355203619909503,
+          "current_mean": 0.2903225806451613,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.2993,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.0761,
+          "ks_p_value": 0.001519986149958103,
+          "reference_mean": 1.8362556561085972,
+          "current_mean": 2.1693548387096775,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    },
+    {
+      "window": "2018-08",
+      "hours": 740,
+      "mae": 154.05,
+      "baseline_mae": 189.04,
+      "error_ratio": 0.8149,
+      "mean_bias": -0.78,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.1422,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.1306,
+          "ks_p_value": 2.841368874956367e-09,
+          "reference_mean": 293.76891163575044,
+          "current_mean": 294.9082810810811,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 2.0373,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1568,
+          "ks_p_value": 3.4790850449482556e-13,
+          "reference_mean": 31.62023608768971,
+          "current_mean": 37.85945945945946,
+          "status": "WARN"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.1849,
+          "ks_p_value": 3.448446758876365e-18,
+          "reference_mean": 0.1801079258010118,
+          "current_mean": 0.27147297297297296,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.2624,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.2363,
+          "ks_p_value": 1.5749895097805354e-29,
+          "reference_mean": 1.8596964586846543,
+          "current_mean": 3.1905405405405407,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0002,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0035,
+          "ks_p_value": 1.0,
+          "reference_mean": 11.547723440134908,
+          "current_mean": 11.527027027027026,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0007,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.012,
+          "ks_p_value": 0.9999899313067143,
+          "reference_mean": 0.2715008431703204,
+          "current_mean": 0.2594594594594595,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.38,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.2376,
+          "ks_p_value": 7.266979017251543e-30,
+          "reference_mean": 2.123102866779089,
+          "current_mean": 3.77027027027027,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": [
+        "clouds_all"
+      ]
+    },
+    {
+      "window": "2018-09",
+      "hours": 720,
+      "mae": 216.87,
+      "baseline_mae": 230.77,
+      "error_ratio": 0.9398,
+      "mean_bias": 51.48,
+      "status": "PASS",
+      "reasons": [],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.103,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.0954,
+          "ks_p_value": 6.885028567323095e-05,
+          "reference_mean": 291.39337076861807,
+          "current_mean": 290.56258333333335,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.3886,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1593,
+          "ks_p_value": 7.241326535605676e-13,
+          "reference_mean": 32.74512146555157,
+          "current_mean": 44.0125,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.2267,
+          "ks_p_value": 1.0150480416003466e-25,
+          "reference_mean": 0.10073277578653922,
+          "current_mean": 0.3164444444444445,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.235,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.1459,
+          "ks_p_value": 7.307273785830351e-11,
+          "reference_mean": 1.9374751095181202,
+          "current_mean": 2.6708333333333334,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0012,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0127,
+          "ks_p_value": 0.9999794009024914,
+          "reference_mean": 11.61569095977698,
+          "current_mean": 11.5,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0143,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.055,
+          "ks_p_value": 0.0651554621179066,
+          "reference_mean": 0.27837514934289126,
+          "current_mean": 0.3333333333333333,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.4642,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1946,
+          "ks_p_value": 5.019317612988329e-19,
+          "reference_mean": 2.199920350457985,
+          "current_mean": 3.026388888888889,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    }
+  ],
+  "synthetic_scenarios": [
+    {
+      "window": "synthetic: temperature sensor +12 K bias",
+      "hours": 720,
+      "mae": 274.84,
+      "baseline_mae": 230.77,
+      "error_ratio": 1.191,
+      "mean_bias": 159.68,
+      "status": "ALERT",
+      "reasons": [
+        "significant feature drift in: temp"
+      ],
+      "feature_drift": {
+        "temp": {
+          "psi": 3.6294,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.6471,
+          "ks_p_value": 1.3064389605283674e-223,
+          "reference_mean": 291.39337076861807,
+          "current_mean": 302.56258333333335,
+          "status": "ALERT"
+        },
+        "clouds_all": {
+          "psi": 0.3886,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1593,
+          "ks_p_value": 7.241326535605676e-13,
+          "reference_mean": 32.74512146555157,
+          "current_mean": 44.0125,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.2267,
+          "ks_p_value": 1.0150480416003466e-25,
+          "reference_mean": 0.10073277578653922,
+          "current_mean": 0.3164444444444445,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.235,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.1459,
+          "ks_p_value": 7.307273785830351e-11,
+          "reference_mean": 1.9374751095181202,
+          "current_mean": 2.6708333333333334,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0012,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0127,
+          "ks_p_value": 0.9999794009024914,
+          "reference_mean": 11.61569095977698,
+          "current_mean": 11.5,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0143,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.055,
+          "ks_p_value": 0.0651554621179066,
+          "reference_mean": 0.27837514934289126,
+          "current_mean": 0.3333333333333333,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.4642,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1946,
+          "ks_p_value": 5.019317612988329e-19,
+          "reference_mean": 2.199920350457985,
+          "current_mean": 3.026388888888889,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [
+        "temp"
+      ],
+      "features_warn": []
+    },
+    {
+      "window": "synthetic: demand +35% (new development opens)",
+      "hours": 720,
+      "mae": 1110.32,
+      "baseline_mae": 230.77,
+      "error_ratio": 4.8114,
+      "mean_bias": -1099.78,
+      "status": "ALERT",
+      "reasons": [
+        "MAE 1110 is 4.81x the baseline 231"
+      ],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.103,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.0954,
+          "ks_p_value": 6.885028567323095e-05,
+          "reference_mean": 291.39337076861807,
+          "current_mean": 290.56258333333335,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.3886,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1593,
+          "ks_p_value": 7.241326535605676e-13,
+          "reference_mean": 32.74512146555157,
+          "current_mean": 44.0125,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.2267,
+          "ks_p_value": 1.0150480416003466e-25,
+          "reference_mean": 0.10073277578653922,
+          "current_mean": 0.3164444444444445,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.235,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.1459,
+          "ks_p_value": 7.307273785830351e-11,
+          "reference_mean": 1.9374751095181202,
+          "current_mean": 2.6708333333333334,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0012,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0127,
+          "ks_p_value": 0.9999794009024914,
+          "reference_mean": 11.61569095977698,
+          "current_mean": 11.5,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0143,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.055,
+          "ks_p_value": 0.0651554621179066,
+          "reference_mean": 0.27837514934289126,
+          "current_mean": 0.3333333333333333,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.4642,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1946,
+          "ks_p_value": 5.019317612988329e-19,
+          "reference_mean": 2.199920350457985,
+          "current_mean": 3.026388888888889,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    },
+    {
+      "window": "synthetic: peak shifts 2 hours later",
+      "hours": 720,
+      "mae": 1068.45,
+      "baseline_mae": 230.77,
+      "error_ratio": 4.6299,
+      "mean_bias": 51.48,
+      "status": "ALERT",
+      "reasons": [
+        "MAE 1068 is 4.63x the baseline 231"
+      ],
+      "feature_drift": {
+        "temp": {
+          "psi": 0.103,
+          "alert_threshold": 1.7817,
+          "ks_statistic": 0.0954,
+          "ks_p_value": 6.885028567323095e-05,
+          "reference_mean": 291.39337076861807,
+          "current_mean": 290.56258333333335,
+          "status": "PASS"
+        },
+        "clouds_all": {
+          "psi": 0.3886,
+          "alert_threshold": 3.2466,
+          "ks_statistic": 0.1593,
+          "ks_p_value": 7.241326535605676e-13,
+          "reference_mean": 32.74512146555157,
+          "current_mean": 44.0125,
+          "status": "PASS"
+        },
+        "rain_1h": {
+          "psi": 0.0,
+          "alert_threshold": 1.1632,
+          "ks_statistic": 0.2267,
+          "ks_p_value": 1.0150480416003466e-25,
+          "reference_mean": 0.10073277578653922,
+          "current_mean": 0.3164444444444445,
+          "status": "PASS"
+        },
+        "weather_severity": {
+          "psi": 0.235,
+          "alert_threshold": 1.9825,
+          "ks_statistic": 0.1459,
+          "ks_p_value": 7.307273785830351e-11,
+          "reference_mean": 1.9374751095181202,
+          "current_mean": 2.6708333333333334,
+          "status": "PASS"
+        },
+        "hour": {
+          "psi": 0.0012,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.0127,
+          "ks_p_value": 0.9999794009024914,
+          "reference_mean": 11.61569095977698,
+          "current_mean": 11.5,
+          "status": "PASS"
+        },
+        "is_weekend": {
+          "psi": 0.0143,
+          "alert_threshold": 0.25,
+          "ks_statistic": 0.055,
+          "ks_p_value": 0.0651554621179066,
+          "reference_mean": 0.27837514934289126,
+          "current_mean": 0.3333333333333333,
+          "status": "PASS"
+        },
+        "adverse_conditions_score": {
+          "psi": 0.4642,
+          "alert_threshold": 1.3721,
+          "ks_statistic": 0.1946,
+          "ks_p_value": 5.019317612988329e-19,
+          "reference_mean": 2.199920350457985,
+          "current_mean": 3.026388888888889,
+          "status": "PASS"
+        }
+      },
+      "features_alert": [],
+      "features_warn": []
+    }
+  ]
+}
