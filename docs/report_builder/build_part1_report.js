@@ -81,7 +81,7 @@ const blocks = [
 buildDocument({
   title: "Data Analytics Insights Report",
   subtitle: "Part 1 — Understanding traffic patterns on westbound I-94",
-  meta: [["Student", "Sora"], ["Programme", "NUS/Emeritus Applied Machine Learning and Data Science"],
+  meta: [["Student", "Rapipong Sornsakda"], ["Programme", "NUS/Emeritus Applied Machine Learning and Data Science"],
          ["Capstone", "Smart City Traffic Intelligence: From Data Analytics to AI-Powered Mobility"]],
   blocks, outFile: OUT, footerText: "Part 1 — Data Analytics Insights Report",
 }).then((f) => console.log("written", f)).catch((e) => { console.error(e); process.exit(1); });

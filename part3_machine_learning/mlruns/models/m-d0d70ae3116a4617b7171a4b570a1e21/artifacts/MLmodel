@@ -1,4 +1,4 @@
-artifact_path: file:///home/claude/smart-city-traffic-capstone/part3_machine_learning/mlruns/models/m-d0d70ae3116a4617b7171a4b570a1e21/artifacts
+artifact_path: file:///home/sora/smart-city-traffic-capstone/part3_machine_learning/mlruns/models/m-d0d70ae3116a4617b7171a4b570a1e21/artifacts
 flavors:
   python_function:
     env:

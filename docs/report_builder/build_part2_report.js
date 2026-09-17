@@ -44,7 +44,7 @@ const blocks = [
 buildDocument({
   title: "Python Pipeline Methodology Report",
   subtitle: "Part 2 — Building a reproducible traffic analytics pipeline",
-  meta: [["Student", "Sora"], ["Programme", "NUS/Emeritus Applied Machine Learning and Data Science"],
+  meta: [["Student", "Rapipong Sornsakda"], ["Programme", "NUS/Emeritus Applied Machine Learning and Data Science"],
          ["Capstone", "Smart City Traffic Intelligence: From Data Analytics to AI-Powered Mobility"]],
   blocks, outFile: OUT, footerText: "Part 2 — Python Methodology Report",
 }).then((f) => console.log("written", f)).catch((e) => { console.error(e); process.exit(1); });

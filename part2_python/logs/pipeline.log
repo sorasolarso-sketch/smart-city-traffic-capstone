@@ -1,7 +1,7 @@
 2026-09-14 13:21:27 | INFO     | __main__               | ########################################################################
 2026-09-14 13:21:27 | INFO     | __main__               | Capstone Part 2 — traffic data pipeline starting
-2026-09-14 13:21:27 | INFO     | __main__               | Input: /home/claude/smart-city-traffic-capstone/data/raw/Metro_Interstate_Traffic_Volume.csv
-2026-09-14 13:21:27 | INFO     | __main__               | Output: /home/claude/smart-city-traffic-capstone/data/processed/traffic_clean.csv
+2026-09-14 13:21:27 | INFO     | __main__               | Input: /home/sora/smart-city-traffic-capstone/data/raw/Metro_Interstate_Traffic_Volume.csv
+2026-09-14 13:21:27 | INFO     | __main__               | Output: /home/sora/smart-city-traffic-capstone/data/processed/traffic_clean.csv
 2026-09-14 13:21:27 | INFO     | __main__               | Console level: INFO
 2026-09-14 13:21:27 | INFO     | __main__               | ########################################################################
 2026-09-14 13:21:27 | INFO     | __main__               | ========================================================================
@@ -59,7 +59,7 @@
 2026-09-14 13:21:27 | WARNING  | __main__               | Cleaning step 4e — imputed 1 daytime reading(s) of exactly zero vehicles using the median for the same hour of day; a westbound interstate does not carry zero vehicles between 05:00 and 22:00, so these are sensor dropouts
 2026-09-14 13:21:27 | INFO     | __main__               | Cleaning step 4e — retained 1 overnight reading(s) of zero vehicles; these are plausible and were not altered
 2026-09-14 13:21:27 | INFO     | __main__               | Cleaning complete — 48,204 row(s) in, 40,575 row(s) out (15.83% removed), 10 column(s)
-2026-09-14 13:21:27 | INFO     | __main__               | Cleaned dataset saved to /home/claude/smart-city-traffic-capstone/data/processed/traffic_clean.csv — 40,575 rows, 10 columns, 2.66 MB
+2026-09-14 13:21:27 | INFO     | __main__               | Cleaned dataset saved to /home/sora/smart-city-traffic-capstone/data/processed/traffic_clean.csv — 40,575 rows, 10 columns, 2.66 MB
 2026-09-14 13:21:27 | INFO     | __main__               | ========================================================================
 2026-09-14 13:21:27 | INFO     | __main__               | STAGE: Cleaned data summary
 2026-09-14 13:21:27 | INFO     | __main__               | ========================================================================
@@ -105,8 +105,8 @@
 2026-09-14 13:21:28 | INFO     | __main__               | Dataset shape AFTER feature engineering: 40,575 rows x 67 columns
 2026-09-14 13:21:28 | INFO     | __main__               | Feature engineering added 57 new columns; row count unchanged at 40,575
 2026-09-14 13:21:28 | INFO     | __main__               | No null values introduced by feature engineering
-2026-09-14 13:21:30 | INFO     | __main__               | Feature table saved to /home/claude/smart-city-traffic-capstone/data/processed/traffic_features.csv — 40,575 rows, 67 columns, 17.51 MB
-2026-09-14 13:21:30 | INFO     | __main__               | Feature metadata saved to /home/claude/smart-city-traffic-capstone/data/processed/feature_metadata.json
+2026-09-14 13:21:30 | INFO     | __main__               | Feature table saved to /home/sora/smart-city-traffic-capstone/data/processed/traffic_features.csv — 40,575 rows, 67 columns, 17.51 MB
+2026-09-14 13:21:30 | INFO     | __main__               | Feature metadata saved to /home/sora/smart-city-traffic-capstone/data/processed/feature_metadata.json
 2026-09-14 13:21:30 | INFO     | __main__               | Feature engineering finished successfully
 2026-09-14 13:21:30 | INFO     | __main__               | ########################################################################
 2026-09-14 13:21:30 | INFO     | __main__               | Capstone Part 2 — visualisation stage starting
@@ -115,11 +115,11 @@
 2026-09-14 13:21:30 | INFO     | __main__               | STAGE: Visualisations
 2026-09-14 13:21:30 | INFO     | __main__               | ========================================================================
 2026-09-14 13:21:31 | INFO     | __main__               | Feature data loaded from traffic_features.csv — 40,575 rows, 67 columns
-2026-09-14 13:21:31 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part2_python/figures/01_hourly_weekday_vs_weekend.png (126 KB)
-2026-09-14 13:21:31 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part2_python/figures/02_traffic_volume_distribution.png (69 KB)
-2026-09-14 13:21:32 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part2_python/figures/03_hour_day_heatmap.png (77 KB)
-2026-09-14 13:21:32 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part2_python/figures/04_weather_impact.png (103 KB)
-2026-09-14 13:21:32 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part2_python/figures/05_temperature_vs_traffic_by_daypart.png (272 KB)
-2026-09-14 13:21:33 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part2_python/figures/06_congestion_rate_over_time.png (107 KB)
-2026-09-14 13:21:33 | INFO     | __main__               | Figure interpretations written to /home/claude/smart-city-traffic-capstone/part2_python/figures/INTERPRETATIONS.md
-2026-09-14 13:21:33 | INFO     | __main__               | All 6 figures generated successfully in /home/claude/smart-city-traffic-capstone/part2_python/figures
+2026-09-14 13:21:31 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part2_python/figures/01_hourly_weekday_vs_weekend.png (126 KB)
+2026-09-14 13:21:31 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part2_python/figures/02_traffic_volume_distribution.png (69 KB)
+2026-09-14 13:21:32 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part2_python/figures/03_hour_day_heatmap.png (77 KB)
+2026-09-14 13:21:32 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part2_python/figures/04_weather_impact.png (103 KB)
+2026-09-14 13:21:32 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part2_python/figures/05_temperature_vs_traffic_by_daypart.png (272 KB)
+2026-09-14 13:21:33 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part2_python/figures/06_congestion_rate_over_time.png (107 KB)
+2026-09-14 13:21:33 | INFO     | __main__               | Figure interpretations written to /home/sora/smart-city-traffic-capstone/part2_python/figures/INTERPRETATIONS.md
+2026-09-14 13:21:33 | INFO     | __main__               | All 6 figures generated successfully in /home/sora/smart-city-traffic-capstone/part2_python/figures

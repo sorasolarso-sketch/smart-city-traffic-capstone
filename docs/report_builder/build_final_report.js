@@ -195,7 +195,7 @@ const blocks = [
 buildDocument({
   title: "Final Capstone Report",
   subtitle: "Smart City Traffic Intelligence: From Data Analytics to AI-Powered Mobility — methodology and findings across Parts 1, 2 and 3",
-  meta: [["Student", "Sora"], ["Programme", "NUS/Emeritus Applied Machine Learning and Data Science"],
+  meta: [["Student", "Rapipong Sornsakda"], ["Programme", "NUS/Emeritus Applied Machine Learning and Data Science"],
          ["Dataset", "Metro Interstate Traffic Volume — westbound I-94, Minneapolis–St Paul, 2012–2018"]],
   blocks, outFile: OUT, footerText: "Final Capstone Report",
 }).then((f) => console.log("written", f)).catch((e) => { console.error(e); process.exit(1); });

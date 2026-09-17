@@ -1,7 +1,7 @@
 2026-09-14 13:21:39 | INFO     | __main__               | ########################################################################
 2026-09-14 13:21:39 | INFO     | __main__               | Capstone Part 3, Task 1 — supervised learning
 2026-09-14 13:21:39 | INFO     | __main__               | ########################################################################
-2026-09-14 13:21:40 | INFO     | common                 | MLflow tracking URI: sqlite:////home/claude/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
+2026-09-14 13:21:40 | INFO     | common                 | MLflow tracking URI: sqlite:////home/sora/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
 2026-09-14 13:21:40 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
 2026-09-14 13:21:40 | INFO     | common                 | Proxy accident-risk label created — 5,682 high-risk hour(s) of 40,575 (14.00% positive class)
 2026-09-14 13:21:40 | DEBUG    | common                 | Label components — high/severe congestion: 20,287 hours (50.0%), risky weather: 12,088 hours (29.8%)
@@ -16,13 +16,13 @@
 2026-09-14 13:21:42 | INFO     | __main__               | Majority-class baseline accuracy on the test set: 0.8404 — any model must beat this to be useful
 2026-09-14 13:21:42 | INFO     | __main__               | Training classifier: logistic_regression
 2026-09-14 13:21:43 | INFO     | __main__               | logistic_regression — accuracy 0.9632, precision 0.8180, recall 0.9892, F1 0.8955, ROC AUC 0.9930 (random split 0.9960, optimism +0.0029)
-2026-09-14 13:21:51 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/classifier_logistic_regression.joblib
+2026-09-14 13:21:51 | INFO     | __main__               | Model saved to /home/sora/smart-city-traffic-capstone/part3_machine_learning/models/classifier_logistic_regression.joblib
 2026-09-14 13:21:51 | INFO     | __main__               | Training classifier: random_forest
 2026-09-14 13:21:56 | INFO     | __main__               | random_forest — accuracy 0.9829, precision 0.9164, recall 0.9822, F1 0.9482, ROC AUC 0.9963 (random split 0.9990, optimism +0.0027)
-2026-09-14 13:22:03 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/classifier_random_forest.joblib
-2026-09-14 13:22:04 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/07_classification_feature_importance.png
+2026-09-14 13:22:03 | INFO     | __main__               | Model saved to /home/sora/smart-city-traffic-capstone/part3_machine_learning/models/classifier_random_forest.joblib
+2026-09-14 13:22:04 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/07_classification_feature_importance.png
 2026-09-14 13:22:04 | INFO     | __main__               | Best classifier by ROC AUC: random_forest (0.9963)
-2026-09-14 13:22:04 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/08_classification_roc_curves.png
+2026-09-14 13:22:04 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/08_classification_roc_curves.png
 2026-09-14 13:22:04 | INFO     | common                 | Created MLflow experiment 'traffic-volume-regression' (id 2)
 2026-09-14 13:22:04 | INFO     | __main__               | ========================================================================
 2026-09-14 13:22:04 | INFO     | __main__               | STAGE: Task 1b — Regression: hourly traffic volume
@@ -30,15 +30,15 @@
 2026-09-14 13:22:04 | INFO     | __main__               | Mean-prediction baseline — MAE 1724.0, R2 -0.0001. Any model must beat this.
 2026-09-14 13:22:04 | INFO     | __main__               | Training regressor: linear_regression
 2026-09-14 13:22:04 | INFO     | __main__               | linear_regression — MAE 645.0 vehicles (19.5% of mean), RMSE 861.6, R2 0.8087
-2026-09-14 13:22:10 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/regressor_linear_regression.joblib
+2026-09-14 13:22:10 | INFO     | __main__               | Model saved to /home/sora/smart-city-traffic-capstone/part3_machine_learning/models/regressor_linear_regression.joblib
 2026-09-14 13:22:10 | INFO     | __main__               | Training regressor: hist_gradient_boosting
 2026-09-14 13:22:13 | INFO     | __main__               | hist_gradient_boosting — MAE 225.8 vehicles (6.8% of mean), RMSE 372.5, R2 0.9643
-2026-09-14 13:22:19 | INFO     | __main__               | Model saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/regressor_hist_gradient_boosting.joblib
+2026-09-14 13:22:19 | INFO     | __main__               | Model saved to /home/sora/smart-city-traffic-capstone/part3_machine_learning/models/regressor_hist_gradient_boosting.joblib
 2026-09-14 13:22:19 | INFO     | __main__               | Best regressor by MAE: hist_gradient_boosting (225.8 vehicles)
-2026-09-14 13:22:19 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/09_regression_diagnostics.png
+2026-09-14 13:22:19 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/09_regression_diagnostics.png
 2026-09-14 13:22:19 | INFO     | __main__               | Error concentration — worst hour 16:00 (MAE 369), best hour 03:00 (MAE 53)
 2026-09-14 13:22:19 | WARNING  | __main__               | Error is unevenly distributed across the day: MAE at 16:00 is 7.0x the MAE at 03:00. This is recorded in the bias and fairness report.
-2026-09-14 13:22:19 | INFO     | __main__               | Results written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/supervised_results.json
+2026-09-14 13:22:19 | INFO     | __main__               | Results written to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/supervised_results.json
 2026-09-14 13:22:19 | INFO     | __main__               | Supervised learning stage finished successfully
 2026-09-14 13:22:22 | INFO     | __main__               | ########################################################################
 2026-09-14 13:22:22 | INFO     | __main__               | Capstone Part 3, Task 2 — unsupervised learning
@@ -71,8 +71,8 @@
 2026-09-14 13:22:38 | INFO     | __main__               | Cluster 1 — 7,298 hours (18.0%): Midday moderate traffic, cool adverse weather | mean volume 3852, mean hour 13.4, severity 6.94, 25% weekend
 2026-09-14 13:22:38 | INFO     | __main__               | Cluster 2 — 12,750 hours (31.4%): Afternoon And Evening moderate traffic, warm fair weather | mean volume 4321, mean hour 15.1, severity 0.68, 27% weekend
 2026-09-14 13:22:39 | INFO     | __main__               | Cluster 3 — 10,073 hours (24.8%): Midday moderate traffic, sub-zero fair weather | mean volume 4151, mean hour 14.6, severity 0.85, 26% weekend
-2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/10_kmeans_selection.png
-2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/11_kmeans_clusters.png
+2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/10_kmeans_selection.png
+2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/11_kmeans_clusters.png
 2026-09-14 13:22:39 | INFO     | __main__               | ========================================================================
 2026-09-14 13:22:39 | INFO     | __main__               | STAGE: Task 2b — Association rule mining
 2026-09-14 13:22:39 | INFO     | __main__               | ========================================================================
@@ -89,14 +89,14 @@
 2026-09-14 13:22:39 | INFO     | __main__               |   day=Weekend AND time=Night AND weather=Clear -> congestion=Low | support 0.027, confidence 0.880, lift 3.52
 2026-09-14 13:22:39 | INFO     | __main__               |   temp=Freezing AND time=Night AND weather=Clear -> congestion=Low | support 0.027, confidence 0.865, lift 3.46
 2026-09-14 13:22:39 | INFO     | __main__               |   temp=Freezing AND time=Night AND weather=Clouds -> congestion=Low | support 0.023, confidence 0.863, lift 3.45
-2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/12_association_rules.png
-2026-09-14 13:22:39 | INFO     | __main__               | Results written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/unsupervised_results.json
-2026-09-14 13:22:39 | INFO     | __main__               | Cluster assignments written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/clustered_hours.csv
+2026-09-14 13:22:39 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/12_association_rules.png
+2026-09-14 13:22:39 | INFO     | __main__               | Results written to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/unsupervised_results.json
+2026-09-14 13:22:39 | INFO     | __main__               | Cluster assignments written to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/clustered_hours.csv
 2026-09-14 13:22:39 | INFO     | __main__               | Unsupervised stage finished successfully
 2026-09-14 13:22:41 | INFO     | __main__               | ########################################################################
 2026-09-14 13:22:41 | INFO     | __main__               | Capstone Part 3, Task 3 — deep learning and explainability
 2026-09-14 13:22:41 | INFO     | __main__               | ########################################################################
-2026-09-14 13:22:42 | INFO     | common                 | MLflow tracking URI: sqlite:////home/claude/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
+2026-09-14 13:22:42 | INFO     | common                 | MLflow tracking URI: sqlite:////home/sora/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
 2026-09-14 13:22:43 | INFO     | common                 | Created MLflow experiment 'traffic-lstm-demand-forecast' (id 3)
 2026-09-14 13:22:44 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
 2026-09-14 13:22:44 | INFO     | common                 | Proxy accident-risk label created — 5,682 high-risk hour(s) of 40,575 (14.00% positive class)
@@ -163,9 +163,9 @@
 2026-09-14 13:25:55 | INFO     | __main__               | LSTM test performance — MAE 255.7 vehicles (7.7% of mean), RMSE 320.0, R2 0.9740
 2026-09-14 13:25:55 | INFO     | __main__               | Persistence baseline (predict previous hour) — MAE 590.6. LSTM improves on it by 334.9 vehicles (56.7%).
 2026-09-14 13:25:55 | DEBUG    | h5py._conv             | Creating converter from 5 to 3
-2026-09-14 13:26:02 | INFO     | __main__               | LSTM saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/models/lstm_traffic_forecast.keras
-2026-09-14 13:26:03 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/13_lstm_training_history.png
-2026-09-14 13:26:03 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/14_lstm_predictions.png
+2026-09-14 13:26:02 | INFO     | __main__               | LSTM saved to /home/sora/smart-city-traffic-capstone/part3_machine_learning/models/lstm_traffic_forecast.keras
+2026-09-14 13:26:03 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/13_lstm_training_history.png
+2026-09-14 13:26:03 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/14_lstm_predictions.png
 2026-09-14 13:26:03 | INFO     | __main__               | ========================================================================
 2026-09-14 13:26:03 | INFO     | __main__               | STAGE: Task 3 — SHAP explainability
 2026-09-14 13:26:03 | INFO     | __main__               | ========================================================================
@@ -187,9 +187,9 @@
 2026-09-14 13:29:07 | INFO     | __main__               |   is_rush_hour                     59.3 vehicles
 2026-09-14 13:29:07 | INFO     | __main__               |   day_of_week_cos                  57.3 vehicles
 2026-09-14 13:29:07 | INFO     | __main__               |   day_of_year_sin                  31.5 vehicles
-2026-09-14 13:29:08 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/15_shap_summary.png
-2026-09-14 13:29:08 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/16_shap_feature_importance.png
-2026-09-14 13:29:08 | INFO     | __main__               | Results written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/deep_learning_results.json
+2026-09-14 13:29:08 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/15_shap_summary.png
+2026-09-14 13:29:08 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/16_shap_feature_importance.png
+2026-09-14 13:29:08 | INFO     | __main__               | Results written to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/deep_learning_results.json
 2026-09-14 13:29:08 | INFO     | __main__               | Deep learning stage finished successfully
 2026-09-14 13:29:11 | INFO     | __main__               | ########################################################################
 2026-09-14 13:29:11 | INFO     | __main__               | Capstone Part 3, Task 6 — monitoring and alerting
@@ -245,14 +245,14 @@
 2026-09-14 13:29:16 | WARNING  | __main__               | Monitoring window synthetic: demand +35% (new development opens) — ALERT: MAE 1110 is 4.81x the baseline 231
 2026-09-14 13:29:16 | WARNING  | __main__               | Monitoring window synthetic: peak shifts 2 hours later — ALERT: MAE 1068 is 4.63x the baseline 231
 2026-09-14 13:29:16 | INFO     | __main__               | All 3 synthetic drift scenarios raised an ALERT — the detector responds to both feature drift and error drift
-2026-09-14 13:29:16 | INFO     | __main__               | Monitoring report written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/monitoring_report.json
-2026-09-14 13:29:16 | INFO     | __main__               | Monitoring dashboard written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/MONITORING_DASHBOARD.md
-2026-09-14 13:29:16 | INFO     | __main__               | Figure saved: /home/claude/smart-city-traffic-capstone/part3_machine_learning/figures/17_monitoring_dashboard.png
+2026-09-14 13:29:16 | INFO     | __main__               | Monitoring report written to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/monitoring_report.json
+2026-09-14 13:29:16 | INFO     | __main__               | Monitoring dashboard written to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/MONITORING_DASHBOARD.md
+2026-09-14 13:29:16 | INFO     | __main__               | Figure saved: /home/sora/smart-city-traffic-capstone/part3_machine_learning/figures/17_monitoring_dashboard.png
 2026-09-14 13:29:16 | INFO     | __main__               | Monitoring stage finished — overall status ALERT
 2026-09-14 13:29:17 | INFO     | __main__               | ========================================================================
 2026-09-14 13:29:17 | INFO     | __main__               | STAGE: Task 6.1 / 6.2 — Model registry and experiment summary
 2026-09-14 13:29:17 | INFO     | __main__               | ========================================================================
-2026-09-14 13:29:18 | INFO     | common                 | MLflow tracking URI: sqlite:////home/claude/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
+2026-09-14 13:29:18 | INFO     | common                 | MLflow tracking URI: sqlite:////home/sora/smart-city-traffic-capstone/part3_machine_learning/mlflow.db
 2026-09-14 13:29:18 | INFO     | __main__               | Experiment 'traffic-accident-risk-classification' — 2 run(s)
 2026-09-14 13:29:18 | INFO     | __main__               | Experiment 'traffic-volume-regression' — 2 run(s)
 2026-09-14 13:29:18 | INFO     | __main__               | Experiment 'traffic-lstm-demand-forecast' — 1 run(s)
@@ -261,13 +261,13 @@
 2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_volume_regressor v1 from run 'reg_hist_gradient_boosting' as champion (mae=225.7681)
 2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_volume_regressor v2 from run 'reg_linear_regression' as challenger (mae=645.0337)
 2026-09-14 13:29:19 | INFO     | __main__               | Registered traffic_lstm_forecaster v1 from run 'lstm_traffic_forecast' as champion (mae=255.7428)
-2026-09-14 13:29:19 | INFO     | __main__               | Model registry document written to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/MODEL_REGISTRY.md
+2026-09-14 13:29:19 | INFO     | __main__               | Model registry document written to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/MODEL_REGISTRY.md
 2026-09-14 13:29:19 | INFO     | __main__               | Experiment summary written with 5 run(s)
 2026-09-14 13:29:19 | INFO     | __main__               | Model registry stage finished — 5 version(s) recorded
 2026-09-14 13:29:20 | INFO     | __main__               | Recommender invoked with {'day_type': 'weekday', 'date': None, 'weather': None, 'temp': None, 'earliest': 7, 'latest': 19, 'duration': 2, 'historical': False, 'json': False}
 2026-09-14 13:29:20 | INFO     | common                 | Feature data loaded — 40,575 rows, 67 columns, 2012-10-02 to 2018-09-30
 2026-09-14 13:29:21 | INFO     | __main__               | Recommender profile built from 40,575 hours
-2026-09-14 13:29:21 | INFO     | __main__               | Recommender profile saved to /home/claude/smart-city-traffic-capstone/part3_machine_learning/outputs/recommender_profile.json
+2026-09-14 13:29:21 | INFO     | __main__               | Recommender profile saved to /home/sora/smart-city-traffic-capstone/part3_machine_learning/outputs/recommender_profile.json
 2026-09-14 13:29:21 | INFO     | __main__               | Historical mode — weekday, all weather
 2026-09-14 13:29:21 | INFO     | __main__               | Recommendation produced in historical mode: best window 19:00-21:00
 2026-09-14 13:29:21 | INFO     | __main__               | Recommender invoked with {'day_type': 'weekday', 'date': '2018-07-04', 'weather': 'Rain', 'temp': None, 'earliest': 6, 'latest': 20, 'duration': 1, 'historical': False, 'json': False}

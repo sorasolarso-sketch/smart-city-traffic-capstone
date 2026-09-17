@@ -1,7 +1,7 @@
 # Smart City Traffic Intelligence: From Data Analytics to AI-Powered Mobility
 
 **NUS/Emeritus Applied Machine Learning and Data Science — Capstone Project**
-**Student:** Sora
+**Student:** Rapipong Sornsakda
 
 An end-to-end traffic intelligence solution built on 48,204 hourly records of
 westbound I-94 traffic near Minneapolis–St Paul (October 2012 – September 2018),
@@ -88,7 +88,7 @@ smart-city-traffic-capstone/
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-username>/smart-city-traffic-capstone.git
+git clone https://github.com/sorasolarso-sketch/smart-city-traffic-capstone.git
 cd smart-city-traffic-capstone
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt

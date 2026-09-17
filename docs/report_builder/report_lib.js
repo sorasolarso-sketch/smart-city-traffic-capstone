@@ -197,7 +197,7 @@ function titleBlock({ title, subtitle, meta }) {
 
 async function buildDocument({ title, subtitle, meta, blocks, outFile, footerText }) {
   const doc = new Document({
-    creator: "Sora",
+    creator: "Rapipong Sornsakda",
     title,
     styles: {
       default: { document: { run: { font: FONT, size: 20 } } },
@@ -235,7 +235,7 @@ async function buildDocument({ title, subtitle, meta, blocks, outFile, footerTex
         default: new Footer({ children: [new Paragraph({
           tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
           children: [
-            new TextRun({ text: footerText || "Sora", size: 16, color: MUTED }),
+            new TextRun({ text: footerText || "Rapipong Sornsakda", size: 16, color: MUTED }),
             new TextRun({ text: "\tPage ", size: 16, color: MUTED }),
             new TextRun({ children: [PageNumber.CURRENT], size: 16, color: MUTED }),
             new TextRun({ text: " of ", size: 16, color: MUTED }),
