@@ -26,3 +26,4 @@ mlartifacts/
 .env
 *.pem
 *.key
+finish.sh
