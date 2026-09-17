@@ -126,7 +126,7 @@ let
     AddedDate      = Table.AddColumn(AddedHour,   "Date",      each DateTime.Date([date_time]), type date),
     AddedYear      = Table.AddColumn(AddedDate,   "Year",      each Date.Year([date_time]), Int64.Type),
     AddedMonth     = Table.AddColumn(AddedYear,   "Month",     each Date.Month([date_time]), Int64.Type),
-    AddedMonthName = Table.AddColumn(AddedMonth,  "MonthName", each Date.ToText([date_time], "MMM"), type text),
+    AddedMonthName = Table.AddColumn(AddedMonth,  "MonthName", each Date.ToText(Date.From([date_time]), [Format="MMM", Culture="en-US"]), type text),
     AddedDayName   = Table.AddColumn(AddedMonthName, "DayOfWeek", each Date.DayOfWeekName([date_time]), type text),
     AddedIsWeekend = Table.AddColumn(
         AddedDayName, "IsWeekend",
